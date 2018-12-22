@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { ListingCard } from './ListingCard';
+import { fetchListings } from '../../actions/listingsActions'
 
 export class ListingList extends Component {
 
