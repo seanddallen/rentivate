@@ -1,36 +1,49 @@
-import { FETCH_LISTINGS, FETCH_LISTING_BY_ID_SUCCESS, FETCH_LISTING_BY_ID, FETCH_LISTINGS_SUCCESS, FETCH_LISTINGS, FETCH_LISTINGS_FAIL } from '../actions/listingsActions'
-// import { FETCH_LISTING } from '../actions/listingsActions'
+import { FETCH_RENTAL_BY_ID_SUCCESS,
+         FETCH_RENTAL_BY_ID_INIT,
+         FETCH_RENTALS_SUCCESS,
+         FETCH_RENTALS_INIT,
+         FETCH_RENTALS_FAIL,
+         UPDATE_RENTAL_SUCCESS,
+         UPDATE_RENTAL_FAIL,
+         RESET_RENTAL_ERRORS } from '../actions/types';
 
-const initialState = {
-  listings: {
+const INITIAL_STATE = {
+  rentals: {
     data: [],
     errors: []
   },
-  listing: {
+  rental: {
     data: {},
     errors: []
   }
 }
 
-export const listingsReducer = (state = initialState.listings, action) => {
+export const rentalReducer = (state = INITIAL_STATE.rentals, action) => {
   switch(action.type) {
-    case FETCH_LISTINGS:
+    case FETCH_RENTALS_INIT:
       return {...state, data: [], errors: []};
-    case FETCH_LISTINGS_SUCCESS:
-      return {...state, data: action.listings};
-    case FETCH_LISTINGS_FAIL:
+    case FETCH_RENTALS_SUCCESS:
+      return {...state, data: action.rentals};
+    case FETCH_RENTALS_FAIL:
       return Object.assign({}, state, {errors: action.errors, data: []});
     default:
       return state;
   }
 }
 
-export const selectedListingReducer = (state = initialState.listing, action) => {
+
+export const selectedRentalReducer = (state = INITIAL_STATE.rental, action) => {
   switch(action.type) {
-    case FETCH_LISTING_BY_ID:
+    case FETCH_RENTAL_BY_ID_INIT:
       return {...state, data: {}};
-    case FETCH_LISTING_BY_ID_SUCCESS:
-      return Object.assign({}, state, { data: action.listing});
+    case FETCH_RENTAL_BY_ID_SUCCESS:
+      return Object.assign({}, state, { data: action.rental});
+    case UPDATE_RENTAL_SUCCESS:
+      return {...state, data: action.rental};
+    case UPDATE_RENTAL_FAIL:
+      return {...state, errors: action.errors};
+    case RESET_RENTAL_ERRORS:
+      return {...state, errors: []};
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class ListingSearchInput extends React.Component {
+class RentalSearchInput extends React.Component {
 
   constructor() {
     super();
@@ -41,4 +41,4 @@ class ListingSearchInput extends React.Component {
 }
 
 
-export default withRouter(ListingSearchInput)
+export default withRouter(RentalSearchInput)
