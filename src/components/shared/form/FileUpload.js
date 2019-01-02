@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactCrop, { makeAspectCrop } from 'react-image-crop';
 import { toast } from 'react-toastify';
-import * as actions from 'actions';
+import * as actions from '../../../actions/imageActions';
 
 
-export class BwmFileUpload extends React.Component {
+export class FileUpload extends React.Component {
 
   constructor() {
     super();

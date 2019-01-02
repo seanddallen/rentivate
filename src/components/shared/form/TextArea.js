@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const BwmTextArea = ({
+export const TextArea = ({
   input,
   label,
   type,

@@ -25,6 +25,7 @@
     "react-bootstrap-daterangepicker": "^4.1.0",
     "react-dom": "^16.7.0",
     "react-google-maps": "^9.4.5",
+    "react-image-crop": "^4.0.3",
     "react-redux": "^6.0.0",
     "react-responsive-modal": "^3.0.3",
     "react-router-dom": "^4.2.2",
@@ -37,14 +38,15 @@
     "titleize": "^1.0.1"
   },
   "scripts": {
-    "start": "npm-run-all -p watch-css start-js",
-    "start-js": "react-scripts start",
-    "build": "npm-run-all build-css build-js",
-    "build-js": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar ./src -o ./src",
-    "watch-css": "npm run build-css && node-sass-chokidar ./src -o ./src --watch --recursive"
+    "watch-css": "npm run build-css && node-sass-chokidar ./src -o ./src --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm start --prefix server",
+    "start-dev": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

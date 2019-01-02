@@ -1,6 +1,4 @@
-import  { FETCH_USER_BOOKINGS_SUCCESS,
-          FETCH_USER_BOOKINGS_FAIL,
-          FETCH_USER_BOOKINGS_INIT } from 'actions/types';
+import  { FETCH_USER_BOOKINGS_SUCCESS, FETCH_USER_BOOKINGS_FAIL, FETCH_USER_BOOKINGS_INIT } from '../actions/bookingsActions';
 
 const INITIAL_STATE = {
   data: [],
@@ -8,7 +6,7 @@ const INITIAL_STATE = {
   isFetching: false
 }
 
-export const userBookingsReducer = (state = INITIAL_STATE, action) => {
+export const bookingsReducer = (state = INITIAL_STATE, action) => {
   switch(action.type) {
     case FETCH_USER_BOOKINGS_INIT:
       return {...state, data: [], errors: [], isFetching: true};

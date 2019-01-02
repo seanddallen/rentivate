@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { BookingCard } from './BookingCard';
 
-import * as actions from 'actions';
+import * as actions from '../../actions/bookingsActions';
+import * as action from '../../actions/authActions';
 
 class BookingManage extends React.Component {
 

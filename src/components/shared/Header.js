@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import RentalSearchInput from 'components/rental/RentalSearchInput';
+import RentalSearchInput from 'components/listings/RentalSearchInput';
 
 class Header extends React.Component {
 

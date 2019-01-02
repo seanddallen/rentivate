@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { RentalAssets } from './RentalAssets';
-import { toUpperCase, rentalType } from 'helpers';
+import { toUpperCase, rentalType } from '../../../services/helpers';
 
 export function RentalDetailInfo(props) {
   const rental = props.rental;

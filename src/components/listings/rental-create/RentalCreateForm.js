@@ -1,10 +1,10 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { BwmInput } from 'components/shared/form/BwmInput';
-import { BwmSelect } from 'components/shared/form/BwmSelect';
-import { BwmTextArea } from 'components/shared/form/BwmTextArea';
-import { BwmFileUpload } from 'components/shared/form/BwmFileUpload';
-import { BwmResError } from 'components/shared/form/BwmResError';
+import { Input } from 'components/shared/form/Input';
+import { Select } from 'components/shared/form/Select';
+import { TextArea } from 'components/shared/form/TextArea';
+import { FileUpload } from 'components/shared/form/FileUpload';
+import { ResError } from 'components/shared/form/ResError';
 // import { required, minLength4 } from 'components/shared/form/validators';
 
 const RentalCreateForm = props => {
@@ -16,7 +16,7 @@ const RentalCreateForm = props => {
         type="text"
         label='Title'
         className='form-control'
-        component={BwmInput}
+        component={Input}
       />
        <Field
         name="description"
@@ -24,40 +24,40 @@ const RentalCreateForm = props => {
         label='Description'
         rows='6'
         className='form-control'
-        component={BwmTextArea}
+        component={TextArea}
       />
       <Field
         name="city"
         type="text"
         label='City'
         className='form-control'
-        component={BwmInput}
+        component={Input}
       />
       <Field
         name="street"
         type="text"
         label='Street'
         className='form-control'
-        component={BwmInput}
+        component={Input}
       />
       <Field
         options={options}
         name="category"
         label='Category'
         className='form-control'
-        component={BwmSelect}
+        component={Select}
       />
       <Field
         name="image"
         label='Image'
-        component={BwmFileUpload}
+        component={FileUpload}
       />
       <Field
         name="bedrooms"
         type="number"
         label='Bedrooms'
         className='form-control'
-        component={BwmInput}
+        component={Input}
       />
       <Field
         name="dailyRate"
@@ -65,19 +65,19 @@ const RentalCreateForm = props => {
         label='Daily Rate'
         className='form-control'
         symbol='$'
-        component={BwmInput}
+        component={Input}
       />
       <Field
         name="shared"
         type="checkbox"
         label='Shared'
         className='form-control'
-        component={BwmInput}
+        component={Input}
       />
       <button className='btn btn-bwm btn-form' type="submit" disabled={!valid || pristine || submitting}>
         Create Rental
       </button>
-      <BwmResError errors={errors} />
+      <ResError errors={errors} />
     </form>
   )
 }

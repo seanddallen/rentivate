@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { BwmInput } from 'components/shared/form/BwmInput';
-import { BwmResError } from 'components/shared/form/BwmResError';
+import { Input } from 'components/shared/form/Input';
+import { ResError } from 'components/shared/form/ResError';
 
 const RegisterForm = props => {
   const { handleSubmit, pristine, submitting, submitCb, valid, errors } = props
@@ -12,33 +12,33 @@ const RegisterForm = props => {
         type="text"
         label='Username'
         className='form-control'
-        component={BwmInput}
+        component={Input}
       />
       <Field
         name="email"
         type="email"
         label='Email'
         className='form-control'
-        component={BwmInput}
+        component={Input}
       />
       <Field
         name="password"
         type="password"
         label='Password'
         className='form-control'
-        component={BwmInput}
+        component={Input}
       />
       <Field
         name="passwordConfirmation"
         type="password"
         label='Password Confirmation'
         className='form-control'
-        component={BwmInput}
+        component={Input}
       />
       <button className='btn btn-bwm btn-form' type="submit" disabled={!valid || pristine || submitting}>
         Register
       </button>
-      <BwmResError errors={errors} />
+      <ResError errors={errors} />
     </form>
   )
 }

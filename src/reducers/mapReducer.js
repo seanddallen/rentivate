@@ -1,4 +1,4 @@
-import  { RELOAD_MAP, RELOAD_MAP_FINISH } from 'actions/types';
+import  { RELOAD_MAP, RELOAD_MAP_FINISH } from '../actions/mapActions';
 
 const INITIAL_STATE = {
   isReloading: false

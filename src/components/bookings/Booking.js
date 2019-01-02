@@ -2,12 +2,13 @@ import React from 'react';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
 import { toast } from 'react-toastify';
 import { BookingModal } from './BookingModal';
-import { getRangeOfDates } from 'helpers';
+import { getRangeOfDates } from '../../services/helpers';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import * as moment from 'moment';
-import * as actions from 'actions';
+import * as actions from '../../actions/bookingsActions';
+import * as action from '../../actions/authActions';
 
 class Booking extends React.Component {
 
@@ -117,7 +118,7 @@ class Booking extends React.Component {
   }
 
   reserveRental() {
-    actions.createBooking(this.state.proposedBooking).then(
+    action.createBooking(this.state.proposedBooking).then(
       (booking) => {
         this.addNewBookedOutDates(booking);
         this.cancelConfirmation();

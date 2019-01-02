@@ -1,5 +1,5 @@
 import React from 'react';
-import { toUpperCase, pretifyDate } from 'helpers';
+import { toUpperCase, pretifyDate } from '../../../services/helpers';
 import { Link } from 'react-router-dom';
 
 export class RentalManageCard extends React.Component {

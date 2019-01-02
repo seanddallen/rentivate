@@ -1,8 +1,8 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { BwmInput } from 'components/shared/form/BwmInput';
-import { BwmResError } from 'components/shared/form/BwmResError';
-import { required, minLength4 } from 'components/shared/form/validators';
+import { Input } from 'components/shared/form/Input';
+import { ResError } from 'components/shared/form/ResError';
+import { required, minLength4 } from 'components/shared/form/Validators';
 
 const LoginForm = props => {
   const { handleSubmit, pristine, submitting, submitCb, valid, errors } = props
@@ -13,7 +13,7 @@ const LoginForm = props => {
         type="email"
         label='Email'
         className='form-control'
-        component={BwmInput}
+        component={Input}
         validate={[required, minLength4]}
       />
       <Field
@@ -21,13 +21,13 @@ const LoginForm = props => {
         type="password"
         label='Password'
         className='form-control'
-        component={BwmInput}
+        component={Input}
         validate={[required]}
       />
       <button className='btn btn-bwm btn-form' type="submit" disabled={!valid || pristine || submitting}>
         Login
       </button>
-      <BwmResError errors={errors} />
+      <ResError errors={errors} />
     </form>
   )
 }

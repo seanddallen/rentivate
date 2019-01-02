@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
-import { BwmResError } from 'components/shared/form/BwmResError';
+import { ResError } from 'components/shared/form/ResError';
 
 export function BookingModal(props) {
   const { open, closeModal, booking, confirmModal, errors, rentalPrice } = props;
@@ -16,7 +16,7 @@ export function BookingModal(props) {
       <p>Price: <em>{booking.totalPrice}$ </em></p>
       <p>Do you confirm your booking for selected days?</p>
     </div>
-    <BwmResError errors={errors} />
+    <ResError errors={errors} />
     <div className='modal-footer'>
       <button onClick={confirmModal} type='button' className='btn btn-bwm'>Confirm</button>
       <button type='button' onClick={closeModal} className='btn btn-bwm'>Cancel</button>

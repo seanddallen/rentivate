@@ -1,5 +1,5 @@
 import axios from 'axios';
-import authService from './auth-service';
+import authService from './authService';
 
 class AxiosService {
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { rentalType } from 'helpers';
+import { rentalType } from '../../../services/helpers';
 
 export function RentalCard(props) {
   const rental = props.rental;

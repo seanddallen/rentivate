@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import RentalMap from './RentalMap';
-import Booking from 'components/booking/Booking';
+import Booking from 'components/bookings/Booking';
 
 import { UserGuard } from '../../shared/auth/UserGuard';
 import { RentalAssets } from './RentalAssets';
-import { toUpperCase } from 'helpers';
+import { toUpperCase } from '../../../services/helpers';
 
 import { EditableInput } from '../../shared/editable/EditableInput';
 import { EditableText } from '../../shared/editable/EditableText';
 import { EditableSelect } from '../../shared/editable/EditableSelect';
 import { EditableImage } from '../../shared/editable/EditableImage';
 
-import * as actions from 'actions';
+import * as actions from '../../../actions/listingsActions';
 
 class RentalUpdate extends React.Component {
 

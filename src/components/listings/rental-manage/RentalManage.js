@@ -1,5 +1,5 @@
 import React from 'react';
-import * as actions from 'actions';
+import * as actions from '../../../actions/listingsActions';
 import { Link } from 'react-router-dom';
 import { RentalManageCard } from './RentalManageCard';
 import { RentalManageModal } from './RentalManageModal';

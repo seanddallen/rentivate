@@ -1,6 +1,6 @@
 import React from 'react';
 import { EditableComponent } from './EditableComponent';
-import { BwmFileUpload } from '../form/BwmFileUpload';
+import { FileUpload } from '../form/FileUpload';
 
 export class EditableImage extends EditableComponent {
 
@@ -37,7 +37,7 @@ export class EditableImage extends EditableComponent {
                   className='btn btn-warning btn-editable btn-editable-image'
                   type='button'> Close
             </button>
-            <BwmFileUpload onChange={this.handleImageUpload}></BwmFileUpload>
+            <FileUpload onChange={this.handleImageUpload}></FileUpload>
           </React.Fragment>
         }
       </div>

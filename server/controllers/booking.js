@@ -1,7 +1,7 @@
 const Booking = require('../models/booking');
-const Rental = require('../models/rental');
+const Rental = require('../models/listing');
 const User = require('../models/user');
-const { normalizeErrors } = require('../helpers/mongoose');
+const { normalizeErrors } = require('../services/mongoose');
 const moment = require('moment');
 
 exports.createBooking = function(req, res) {

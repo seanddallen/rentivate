@@ -2,7 +2,7 @@ import React from 'react';
 import { MapWithGeocode} from 'components/map/GoogleMap';
 import { connect } from 'react-redux';
 
-import * as actions from 'actions';
+import * as actions from '../../../actions/mapActions';
 
 class RentalMap extends React.Component {
 

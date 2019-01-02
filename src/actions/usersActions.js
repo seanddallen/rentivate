@@ -1,6 +1,6 @@
 import axios from 'axios';
-import authService from 'services/auth-service';
-import axiosService from 'services/axios-service';
+import authService from 'services/authService';
+import axiosService from 'services/axiosService';
 
 export const FETCH_RENTALS = 'FETCH_RENTALS';
 export const FETCH_RENTAL_BY_ID_SUCCESS = 'FETCH_RENTAL_BY_ID_SUCCESS';
@@ -30,6 +30,13 @@ export const FETCH_USERS = 'FETCH_USERS'
 export const ADD_LISTING = 'ADD_LISTING'
 export const UPDATE_LISTING = 'UPDATE_LISTING'
 export const REMOVE_LISTING = 'REMOVE_LISTING'
+
+const axiosInstance = axiosService.getInstance();
+
+export const verifyRentalOwner = (rentalId) => {
+  return axiosInstance.get(`/rentals/${rentalId}/verify-user`);
+}
+
 
 export const fetchUsers = () => {
   return dispatch =>  {

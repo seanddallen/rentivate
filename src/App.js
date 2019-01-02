@@ -5,25 +5,25 @@ import { Provider } from 'react-redux';
 
 import { ToastContainer } from 'react-toastify';
 import Header from 'components/shared/Header';
-import RentalListing from 'components/rental/rental-listing/RentalListing';
-import RentalSearchListing from 'components/rental/rental-listing/RentalSearchListing';
-import RentalDetail from 'components/rental/rental-detail/RentalDetail';
-import RentalUpdate from 'components/rental/rental-detail/RentalUpdate';
-import { RentalCreate } from 'components/rental/rental-create/RentalCreate';
+import RentalListing from 'components/listings/rental-listing/RentalListing';
+import RentalSearchListing from 'components/listings/rental-listing/RentalSearchListing';
+import RentalDetail from 'components/listings/rental-detail/RentalDetail';
+import RentalUpdate from 'components/listings/rental-detail/RentalUpdate';
+import { RentalCreate } from 'components/listings/rental-create/RentalCreate';
 import Login from 'components/login/Login';
 import { Register } from 'components/register/Register';
 
-import { RentalManage } from 'components/rental/rental-manage/RentalManage';
-import BookingManage from 'components/booking/booking-manage/BookingManage';
+import { RentalManage } from 'components/listings/rental-manage/RentalManage';
+import BookingManage from 'components/bookings/BookingManage';
 
 import { ProtectedRoute } from 'components/shared/auth/ProtectedRoute';
 import { LoggedInRoute } from 'components/shared/auth/LoggedInRoute';
 
-import * as actions from 'actions';
+import * as actions from './actions/authActions';
 
 import 'App.css';
 
-const store = require('./reducers').init();
+const store = require('./store').init();
 
 class App extends Component {
 

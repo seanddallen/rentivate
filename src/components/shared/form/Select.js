@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const BwmSelect = ({
+export const Select = ({
   input,
   label,
   options,

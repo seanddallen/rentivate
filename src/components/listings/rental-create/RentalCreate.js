@@ -2,7 +2,7 @@ import React from 'react';
 import RentalCreateForm from './RentalCreateForm';
 import { Redirect } from 'react-router-dom';
 
-import * as actions from 'actions';
+import * as actions from '../../../actions/listingsActions';
 
 export class RentalCreate extends React.Component {
 
