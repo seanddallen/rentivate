@@ -72,8 +72,8 @@ const fetchRentalsFail = (errors) => {
   }
 }
 
-export const fetchRentals = (city) => {
-  const url = city ? `/rentals?city=${city}` : '/rentals';
+export const fetchRentals = (state) => {
+  const url = state ? `/rentals?state=${state}` : '/rentals';
 
   return dispatch => {
     dispatch(fetchRentalsInit());
@@ -129,7 +129,7 @@ export const updateRental = (id, rentalData) => dispatch => {
     .then(updatedRental => {
       dispatch(updateRentalSuccess(updatedRental));
 
-      if (rentalData.city || rentalData.street) {
+      if (rentalData.state || rentalData.street) {
         dispatch(reloadMap());
       }
     })

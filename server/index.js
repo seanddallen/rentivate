@@ -6,7 +6,7 @@ const FakeDb = require('./fake-db');
 const Rental = require('./models/rental')
 const path = require('path');
 
-const rentalRoutes = require('./routes/rentals'),
+const rentalRoutes = require('./routes/listings'),
       userRoutes = require('./routes/users'),
       bookingRoutes = require('./routes/bookings'),
       imageUploadRoutes = require('./routes/image-upload');
