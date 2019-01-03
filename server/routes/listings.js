@@ -39,7 +39,7 @@ router.get('/:id/verify-user', UserCtrl.authMiddleware, function(req, res) {
       }
 
       if (foundRental.user.id !== user.id) {
-        return res.status(422).send({errors: [{title: 'Invalid User!', detail: 'You are not rental owner!'}]});
+        return res.status(422).send({errors: [{title: 'Invalid User.', detail: 'You are not rental owner.'}]});
       }
 
       return res.json({status: 'verified'});
@@ -55,7 +55,7 @@ router.get('/:id', function(req, res) {
         .exec(function(err, foundRental) {
 
     if (err) {
-      return res.status(422).send({errors: [{title: 'Rental Error!', detail: 'Could not find Rental!'}]});
+      return res.status(422).send({errors: [{title: 'Rental Error.', detail: 'Could not find Rental.'}]});
     }
 
     return res.json(foundRental);
@@ -77,7 +77,7 @@ router.patch('/:id', UserCtrl.authMiddleware, function(req, res) {
       }
 
       if (foundRental.user.id !== user.id) {
-        return res.status(422).send({errors: [{title: 'Invalid User!', detail: 'You are not rental owner!'}]});
+        return res.status(422).send({errors: [{title: 'Invalid User.', detail: 'You are not rental owner.'}]});
       }
 
       foundRental.set(rentalData);
@@ -109,11 +109,11 @@ router.delete('/:id', UserCtrl.authMiddleware, function(req, res) {
     }
 
     if (user.id !== foundRental.user.id) {
-      return res.status(422).send({errors: [{title: 'Invalid User!', detail: 'You are not rental owner!'}]});
+      return res.status(422).send({errors: [{title: 'Invalid User.', detail: 'You are not rental owner.'}]});
     }
 
     if (foundRental.bookings.length > 0) {
-      return res.status(422).send({errors: [{title: 'Active Bookings!', detail: 'Cannot delete rental with active bookings!'}]});
+      return res.status(422).send({errors: [{title: 'Active Bookings.', detail: 'Cannot delete rental with active bookings.'}]});
     }
 
     foundRental.remove(function(err) {
@@ -157,7 +157,7 @@ router.get('', function(req, res) {
     }
 
     if (state && foundRentals.length === 0) {
-      return res.status(422).send({errors: [{title: 'No Rentals Found!', detail: `There are no rentals for city ${state}`}]});
+      return res.status(422).send({errors: [{title: 'No Rentals Found.', detail: `There are no rentals in ${state}`}]});
     }
 
     return res.json(foundRentals);

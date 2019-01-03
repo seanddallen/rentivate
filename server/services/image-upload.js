@@ -4,8 +4,8 @@ const multerS3 = require('multer-s3');
 const config = require('../config');
 
 aws.config.update({
-  secretAccessKey: config.AWS_SECRET_ACCESS_KEY,
-  accessKeyId: config.AWS_ACCESS_KEY_ID,
+  secretAccessKey: config.AWS_SECRET_KEY,
+  accessKeyId: config.AWS_ACCESS_KEY,
   region: 'us-east-2'
 });
 
@@ -15,7 +15,7 @@ const fileFilter = (req, file, cb) => {
   if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
     cb(null, true);
   } else {
-    cb(new Error('Invalid file type, only JPEG and PNG is allowed!'), false);
+    cb(new Error('Invalid file type, only JPEG and PNG is allowed.'), false);
   }
 }
 

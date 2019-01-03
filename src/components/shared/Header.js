@@ -54,7 +54,6 @@ class Header extends React.Component {
       <nav className='navbar navbar-dark navbar-expand-lg'>
         <div className='container'>
           <Link className='navbar-brand' to='/rentals'>Rentivate
-            <img src={process.env.PUBLIC_URL + '/img/react-logo.svg'} alt=""/>
           </Link>
           {/* <RentalSearchInput /> */}
           <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>

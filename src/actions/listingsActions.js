@@ -73,8 +73,8 @@ const fetchRentalsFail = (errors) => {
 }
 
 export const fetchRentals = (state) => {
+  // const url = state ? `/api/v1/rentals?state=${state}` : '/api/v1/rentals';
   const url = state ? `/rentals?state=${state}` : '/rentals';
-
   return dispatch => {
     dispatch(fetchRentalsInit());
 
