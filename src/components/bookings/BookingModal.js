@@ -3,7 +3,7 @@ import Modal from 'react-responsive-modal';
 import { ResError } from 'components/shared/form/ResError';
 
 export function BookingModal(props) {
-  const { open, closeModal, booking, confirmModal, errors, rentalPrice } = props;
+  const { open, closeModal, booking, confirmModal, errors, rentalPrice, acceptPayment } = props;
 
   return (
     <Modal open={open} onClose={closeModal} little classNames={{ modal: 'booking-modal' }}>
@@ -12,8 +12,10 @@ export function BookingModal(props) {
      <div className='modal-body'>
       <em>{booking.days}</em> days /
       <em>${rentalPrice}</em> per day
-      {/* <p>Guests: <em>{booking.guests}</em></p> */}
       <p>Price: <em>${booking.totalPrice} </em></p>
+
+      {acceptPayment && acceptPayment()}
+
       <p>Do you confirm your booking for selected days?</p>
     </div>
     <ResError errors={errors} />

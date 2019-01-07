@@ -5,6 +5,7 @@ import { BookingModal } from './BookingModal';
 import { getRangeOfDates } from '../../services/helpers';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Payment from '../payment/Payment'
 
 import * as moment from 'moment';
 import * as actions from '../../actions/bookingsActions';
@@ -177,7 +178,8 @@ class Booking extends React.Component {
                       confirmModal={this.reserveRental}
                       booking={this.state.proposedBooking}
                       errors={this.state.errors}
-                      rentalPrice={rental.rate}/>
+                      rentalPrice={rental.rate}
+                      acceptPayment={() => <Payment />} />
       </div>
     )
   }
