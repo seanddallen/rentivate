@@ -42,15 +42,17 @@ export class RentalManageCard extends React.Component {
         <div className={`card text-center ${deleteClass}`}>
           <div className='card-block'>
             <h4 className='card-title'>{rental.title} - {toUpperCase(rental.city)}</h4>
-            <Link className='btn btn-bwm' to={`/rentals/${rental._id}`}>Go to Rental</Link>
+            <Link className='btn btn-bwm' to={`/rentals/${rental._id}`}>View Rental</Link>
             { rental.bookings && rental.bookings.length > 0 && modal }
           </div>
           <div className='card-footer text-muted'>
-            Created at {pretifyDate(rental.createdAt)}
+              <div>
+                Created at {pretifyDate(rental.createdAt)}
+              </div>
             { !wantDelete &&
               <React.Fragment>
-                <button onClick={() => { this.showDeleteMenu() }} className='btn btn-danger'> Delete </button>
-                <Link className='btn btn-warning' to={{pathname: `/rentals/${rental._id}/edit`, state: { isUpdate: true }}}> Edit </Link>
+                <i onClick={() => { this.showDeleteMenu() }} className='fa fa-trash' style={{color: 'grey', fontSize: '2em', cursor: 'pointer', margin: '0 20px'}}></i>
+                <Link to={{pathname: `/rentals/${rental._id}/edit`, state: { isUpdate: true }}}><i className='fa fa-edit' style={{color: 'grey', fontSize: '2em', cursor: 'pointer', margin: '10px 20px 0 0'}}></i> </Link>
               </React.Fragment>
             }
             { wantDelete &&

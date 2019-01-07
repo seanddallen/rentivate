@@ -72,9 +72,9 @@ const fetchRentalsFail = (errors) => {
   }
 }
 
-export const fetchRentals = (state) => {
-  // const url = state ? `/api/v1/rentals?state=${state}` : '/api/v1/rentals';
-  const url = state ? `/rentals?state=${state}` : '/rentals';
+export const fetchRentals = (city) => {
+  // const url = city ? `/api/v1/rentals?city=${city}` : '/api/v1/rentals';
+  const url = city ? `/rentals?city=${city}` : '/rentals';
   return dispatch => {
     dispatch(fetchRentalsInit());
 
@@ -129,7 +129,7 @@ export const updateRental = (id, rentalData) => dispatch => {
     .then(updatedRental => {
       dispatch(updateRentalSuccess(updatedRental));
 
-      if (rentalData.state || rentalData.street) {
+      if (rentalData.city || rentalData.street) {
         dispatch(reloadMap());
       }
     })

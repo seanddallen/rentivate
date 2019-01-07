@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Input } from 'components/shared/form/Input';
-import { ResError } from 'components/shared/form/ResError';
+import { Input } from 'components/shared/form/input';
+import { ResError } from 'components/shared/form/resError';
 
 const RegisterForm = props => {
   const { handleSubmit, pristine, submitting, submitCb, valid, errors } = props
@@ -35,7 +35,7 @@ const RegisterForm = props => {
         className='form-control'
         component={Input}
       />
-      <button className='btn btn-bwm btn-form' type="submit" disabled={!valid || pristine || submitting}>
+      <button className='btn btn-lg btn-outline-success' type="submit" disabled={!valid || pristine || submitting}>
         Register
       </button>
       <ResError errors={errors} />

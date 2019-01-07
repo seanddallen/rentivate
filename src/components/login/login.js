@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginForm from './LoginForm';
+import LoginForm from './loginForm';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import * as actions from '../../actions/authActions';
@@ -21,7 +21,7 @@ class Login extends React.Component {
     const { successRegister } = this.props.location.state || false;
 
     if (isAuth) {
-      return <Redirect to={{pathname: '/rentals'}} />
+      return <Redirect to={{pathname: '/categories'}} />
     }
 
     return (
@@ -33,14 +33,14 @@ class Login extends React.Component {
               {
                 successRegister &&
                   <div className='alert alert-success'>
-                    <p> You have been succesfuly registered, please login now. </p>
+                    <p> Registration successful. You may login now. </p>
                   </div>
               }
               <LoginForm submitCb={this.loginUser} errors={errors}/>
             </div>
             <div className="col-md-6 ml-auto">
               <div className="image-container">
-                <h2 className="catchphrase">Hundreds of awesome places in reach of few clicks.</h2>
+                <h2 className="catchphrase">Hundreds of rentals just a few clicks away.</h2>
                 {/* <img src={process.env.PUBLIC_URL + '/img/login-image.jpg'} alt=""/> */}
               </div>
             </div>

@@ -13,12 +13,14 @@ export const Input = ({
     <div className='input-group'>
       { symbol &&
         <div className='input-group-prepend'>
-          <div className='input-group-text'>{symbol}</div>
+          <div className='input-group-text'>{symbol}
+          </div>
         </div>
       }
       <input {...input} type={type} className={className} />
     </div>
       {touched &&
-        ((error && <div className='alert alert-danger'>{error}</div>))}
+        ((error && <div className='alert alert-danger'>{error}
+        </div>))}
   </div>
 )

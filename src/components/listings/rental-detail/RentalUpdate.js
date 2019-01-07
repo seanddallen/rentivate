@@ -4,7 +4,6 @@ import RentalMap from './RentalMap';
 import Booking from 'components/bookings/Booking';
 
 import { UserGuard } from '../../shared/auth/UserGuard';
-import { RentalAssets } from './RentalAssets';
 import { toUpperCase } from '../../../services/helpers';
 
 import { EditableInput } from '../../shared/editable/EditableInput';
@@ -89,7 +88,7 @@ class RentalUpdate extends React.Component {
               <div className='row'>
                 <div className='col-md-8'>
                   <div className='rental'>
-                    <label className={`rental-label rental-type ${rental.category}`}> Shared </label>
+                    {/* <label className={`rental-label rental-type ${rental.category}`}> Shared </label>
                     <EditableSelect entity={rental}
                                     entityField={'shared'}
                                     className={`rental-type ${rental.category}`}
@@ -97,20 +96,19 @@ class RentalUpdate extends React.Component {
                                     options={[true, false]}
                                     containerStyle={{'display': 'inline-block'}}
                                     errors={errors}
-                                    resetErrors={this.resetRentalErrors} />
+                                    resetErrors={this.resetRentalErrors} /> */}
 
                     <EditableSelect entity={rental}
                                     entityField={'category'}
                                     className={`rental-type ${rental.category}`}
                                     updateEntity={this.updateRental}
-                                    options={['apartment', 'house', 'condo']}
+                                    options={['appliances', 'camping', 'clothing', 'electronics', 'equipment', 'furniture', 'games', 'general', 'household', 'instruments', 'media', 'recreational', 'sporting', 'tools',  'vehicles']}
                                     errors={errors}
                                     resetErrors={this.resetRentalErrors} />
 
-
                     <div className="rental-owner">
-                      <img src="https://api.adorable.io/avatars/285/abott@adorable.png" alt="owner"/>
-                      <span>{rental.user && rental.user.username}</span>
+                      {/* <img src="https://api.adorable.io/avatars/285/abott@adorable.png" alt="owner"/> */}
+                      {/* <span>{rental.user && rental.user.username}</span> */}
                     </div>
 
                     <EditableInput entity={rental}
@@ -135,18 +133,6 @@ class RentalUpdate extends React.Component {
                                    errors={errors}
                                    resetErrors={this.resetRentalErrors} />
 
-                    <div className='rental-room-info'>
-                      <span><i className='fa fa-building'></i>
-                        <EditableInput entity={rental}
-                                   entityField={'bedrooms'}
-                                   className={'rental-bedrooms'}
-                                   containerStyle={{'display': 'inline-block'}}
-                                   updateEntity={this.updateRental}
-                                   errors={errors}
-                                   resetErrors={this.resetRentalErrors}  /> bedrooms</span>
-                      <span><i className='fa fa-user'></i> {rental.bedrooms + 4} guests</span>
-                      <span><i className='fa fa-bed'></i> {rental.bedrooms + 2} beds</span>
-                    </div>
                     <EditableText  entity={rental}
                                    entityField={'description'}
                                    className={'rental-description'}
@@ -156,7 +142,6 @@ class RentalUpdate extends React.Component {
                                    errors={errors}
                                    resetErrors={this.resetRentalErrors}  />
                     <hr></hr>
-                    <RentalAssets />
                   </div>
                 </div>
                 <div className='col-md-4'>

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Rental = require('../models/listing');
+const Rental = require('../models/Listing');
 const User = require('../models/user');
 const { normalizeErrors } = require('../services/mongoose');
 
@@ -61,6 +61,22 @@ router.get('/:id', function(req, res) {
     return res.json(foundRental);
   });
 });
+
+// router.get('/categories/:id', function(req, res) {
+//   const rentalId = req.params.id;
+//
+//   Rental.findById(rentalId)
+//         .populate('user', 'username -_id')
+//         .populate('bookings', 'startAt endAt -_id')
+//         .exec(function(err, foundRental) {
+//
+//     if (err) {
+//       return res.status(422).send({errors: [{title: 'Rental Error.', detail: 'Could not find Rental.'}]});
+//     }
+//
+//     return res.json(foundRental);
+//   });
+// });
 
 router.patch('/:id', UserCtrl.authMiddleware, function(req, res) {
 
@@ -127,10 +143,10 @@ router.delete('/:id', UserCtrl.authMiddleware, function(req, res) {
 });
 
 router.post('', UserCtrl.authMiddleware, function(req, res) {
-  const { title, state, address, category, condition, image, description, rate } = req.body;
+  const { title, city, street, category, condition, image, description, rate } = req.body;
   const user = res.locals.user;
 
-  const rental = new Rental({title, state, address, category, condition, image, description, rate});
+  const rental = new Rental({title, city, street, category, condition, image, description, rate});
   rental.user = user;
 
   Rental.create(rental, function(err, newRental) {
@@ -138,15 +154,15 @@ router.post('', UserCtrl.authMiddleware, function(req, res) {
       return res.status(422).send({errors: normalizeErrors(err.errors)});
     }
 
-    User.update({_id: user.id}, { $push: {rentals: newRental}}, function(){});
+    User.update({_id: user.id}, { $push: {listings: newRental}}, function(){});
 
     return res.json(newRental);
   });
 });
 
 router.get('', function(req, res) {
-  const state = req.query.state;
-  const query = state ? {state: state.toLowerCase()} : {};
+  const city = req.query.city;
+  const query = city ? {city: city.toLowerCase()} : {};
 
   Rental.find(query)
       .select('-bookings')
@@ -156,8 +172,8 @@ router.get('', function(req, res) {
       return res.status(422).send({errors: normalizeErrors(err.errors)});
     }
 
-    if (state && foundRentals.length === 0) {
-      return res.status(422).send({errors: [{title: 'No Rentals Found.', detail: `There are no rentals in ${state}`}]});
+    if (city && foundRentals.length === 0) {
+      return res.status(422).send({errors: [{title: 'No Rentals Found.', detail: `There are no rentals in ${city}`}]});
     }
 
     return res.json(foundRentals);

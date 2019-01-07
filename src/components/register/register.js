@@ -1,5 +1,5 @@
 import React from 'react';
-import RegisterForm from './RegisterForm';
+import RegisterForm from './registerForm';
 import { Redirect } from 'react-router-dom';
 
 import * as actions from '../../actions/authActions';
@@ -41,8 +41,8 @@ export class Register extends React.Component {
             </div>
             <div className='col-md-6 ml-auto'>
               <div className='image-container'>
-                <h2 className='catchphrase'>As our member you have access to most awesome places in the world.</h2>
-                <img src={process.env.PUBLIC_URL + '/img/register-image.jpg'} alt=""/>
+                <h2 className='catchphrase'>Join and Rent anything with just a few clicks.</h2>
+                {/* <img src={process.env.PUBLIC_URL + '/img/register-image.jpg'} alt=""/> */}
               </div>
             </div>
           </div>

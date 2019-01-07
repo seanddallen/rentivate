@@ -1,13 +1,46 @@
-#listing {
+#rentalListing {
   .title {
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 20px;
   }
 
-  /* SINGLE CARD STYLES*/
+  // .favorite {
+  //   &:active {
+  //     outline: none;
+  //   }
+  .btn-outline-danger {
+    border: 1px solid $secondary-color !important;
+    color: $secondary-color !important;
+  }
+
+  .btn-outline-danger:hover, .btn-outline-danger:active, .btn-outline-danger:visited {
+      background-color: $secondary-color !important;
+      color: $main-white-color !important;
+  }  // }
+
+  .btn-outline-success {
+    border: 1px solid $main-color !important;
+    color: $main-color !important;
+  }
+
+  .btn-outline-success:hover, .btn-outline-success:active, .btn-outline-success:visited {
+      background-color: $main-color !important;
+      color: $main-white-color !important;
+  }  // }
+
+  *:focus {outline:none}
+
+  .rental-detail-link {
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   .bwm-card {
     border: none;
+    margin-bottom: 20px;
 
     .card-block {
       padding-top: 8px;
@@ -17,12 +50,12 @@
         font-weight: 500;
         font-size: 12px;
         text-transform: uppercase;
-        color: #16861a;
       }
 
       .card-title {
         font-size: 19px;
         margin: 3px 0;
+        color: $main-text-gray-color;
       }
 
       .card-text {

@@ -9,7 +9,7 @@ export class UserGuard extends React.Component {
     if (isAllowed && !isFetching) {
       return this.props.children;
     } else if (!isAllowed && !isFetching) {
-      return <Redirect to={{pathname: '/rentals'}} />
+      return <Redirect to={{pathname: '/categories'}} />
     } else {
       return <h1> Loading... </h1>
     }

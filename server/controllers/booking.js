@@ -1,5 +1,5 @@
 const Booking = require('../models/booking');
-const Rental = require('../models/listing');
+const Rental = require('../models/Listing');
 const User = require('../models/user');
 const { normalizeErrors } = require('../services/mongoose');
 const moment = require('moment');

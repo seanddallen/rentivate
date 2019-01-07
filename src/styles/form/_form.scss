@@ -41,3 +41,13 @@
     margin-bottom: 5px;
   }
 }
+
+.btn-outline-success {
+  border: 1px solid $main-color !important;
+  color: $main-color !important;
+}
+
+.btn-outline-success:hover, .btn-outline-success:active, .btn-outline-success:visited {
+    background-color: $main-color !important;
+    color: $main-white-color !important;
+}  // }

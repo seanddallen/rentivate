@@ -39,9 +39,10 @@ export class EditableInput extends EditableComponent {
     return (
       <React.Fragment>
         <span className={className}> {this.formatView(value)} </span>
-        <button onClick={() => this.enableEdit() }
+        <i className='fa fa-edit' style={{cursor: 'pointer'}} onClick={() => this.enableEdit()}></i>
+        {/* <button onClick={() => this.enableEdit() }
                 className='btn btn-warning btn-editable'
-                type='button'> Edit </button>
+                type='button'> Edit </button> */}
       </React.Fragment>
     )
   }

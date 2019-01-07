@@ -1,8 +1,8 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Input } from 'components/shared/form/Input';
-import { ResError } from 'components/shared/form/ResError';
-import { required, minLength4 } from 'components/shared/form/Validators';
+import { Input } from 'components/shared/form/input';
+import { ResError } from 'components/shared/form/resError';
+import { required, minLength4 } from 'components/shared/form/validators';
 
 const LoginForm = props => {
   const { handleSubmit, pristine, submitting, submitCb, valid, errors } = props
@@ -24,7 +24,7 @@ const LoginForm = props => {
         component={Input}
         validate={[required]}
       />
-      <button className='btn btn-bwm btn-form' type="submit" disabled={!valid || pristine || submitting}>
+      <button className='btn btn-lg btn-outline-success' type="submit" disabled={!valid || pristine || submitting}>
         Login
       </button>
       <ResError errors={errors} />

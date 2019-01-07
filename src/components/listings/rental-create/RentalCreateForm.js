@@ -1,17 +1,17 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Input } from 'components/shared/form/Input';
+import { Input } from 'components/shared/form/input';
 import { Select } from 'components/shared/form/Select';
 import { TextArea } from 'components/shared/form/TextArea';
 import { FileUpload } from 'components/shared/form/FileUpload';
-import { ResError } from 'components/shared/form/ResError';
+import { ResError } from 'components/shared/form/resError';
 // import { required, minLength4 } from 'components/shared/form/validators';
 
 const RentalCreateForm = props => {
   const { handleSubmit, pristine, submitting, submitCb, valid, options, errors } = props
   return (
     <form onSubmit={handleSubmit(submitCb)}>
-    <Field
+      <Field
         name="title"
         type="text"
         label='Title'
@@ -36,7 +36,7 @@ const RentalCreateForm = props => {
       <Field
         name="street"
         type="text"
-        label='Street'
+        label='street'
         className='form-control'
         component={Input}
       />
@@ -52,29 +52,22 @@ const RentalCreateForm = props => {
         label='Image'
         component={FileUpload}
       />
-      <Field
-        name="bedrooms"
-        type="number"
-        label='Bedrooms'
+      {/* <Field
+        name="condition"
+        type="text"
+        label='condition'
         className='form-control'
         component={Input}
-      />
+      /> */}
       <Field
-        name="dailyRate"
+        name="rate"
         type="text"
         label='Daily Rate'
         className='form-control'
         symbol='$'
         component={Input}
       />
-      <Field
-        name="shared"
-        type="checkbox"
-        label='Shared'
-        className='form-control'
-        component={Input}
-      />
-      <button className='btn btn-bwm btn-form' type="submit" disabled={!valid || pristine || submitting}>
+      <button className='btn btn-lg btn-outline-danger' type="submit" disabled={!valid || pristine || submitting}>
         Create Rental
       </button>
       <ResError errors={errors} />
@@ -84,5 +77,5 @@ const RentalCreateForm = props => {
 
 export default reduxForm({
   form: 'rentalCreateForm',
-  initialValues: { shared: false, category: 'apartment'}
+  initialValues: { category: 'general'}
 })(RentalCreateForm)

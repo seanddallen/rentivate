@@ -24,10 +24,12 @@ export class EditableImage extends EditableComponent {
         { !isActive &&
           <React.Fragment>
             <img src={value} alt=''/>
-            <button onClick={() => this.enableEdit() }
+            <i className='fa fa-edit' style={{cursor: 'pointer'}} onClick={() => this.enableEdit()}></i>
+
+            {/* <button onClick={() => this.enableEdit() }
                 className='btn btn-warning btn-editable btn-editable-image'
                 type='button'> Edit
-            </button>
+            </button> */}
           </React.Fragment>
         }
 

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { RentalAssets } from './RentalAssets';
+import { Link } from 'react-router-dom';
 import { toUpperCase, rentalType } from '../../../services/helpers';
 
 export function RentalDetailInfo(props) {
@@ -8,23 +8,19 @@ export function RentalDetailInfo(props) {
 
   return (
       <div className='rental'>
-        <h2 className={`rental-type ${rental.category}`}>{rentalType(rental.shared)} {rental.category}</h2>
-        <div className="rental-owner">
-          <img src="https://api.adorable.io/avatars/285/abott@adorable.png" alt="owner"/>
-          <span>{rental.user && rental.user.username}</span>
-        </div>
-        <h1 className='rental-title'>{rental.title}</h1>
-        <h2 className='rental-city'>{toUpperCase(rental.city)}</h2>
-        <div className='rental-room-info'>
-          <span><i className='fa fa-building'></i>{rental.bedrooms} bedrooms</span>
-          <span><i className='fa fa-user'></i> {rental.bedrooms + 4} guests</span>
-          <span><i className='fa fa-bed'></i> {rental.bedrooms + 2} beds</span>
-        </div>
-        <p className='rental-description'>
+        <h1 className='text-center rental-title'>{rental.title}</h1>
+        <hr></hr>
+        <h2 className={`text-center rental-type ${rental.category}`}>{rental.category} &#183; {rental.city}</h2>
+        <hr></hr>
+        <p className='text-center rental-description'>
           {rental.description}
         </p>
         <hr></hr>
-        <RentalAssets />
+        <Link className='rental-detail-link' style={{textDecoration: 'none'}} to={'/user/profile'}>
+          <div style={{display: 'flex', justifyContent: 'center'}}>
+            <button className='btn btn-lg btn-outline-danger' style={{outline: 'solid 1px $secondary-color !important', display: 'flex', justifyContent: 'center', textDecoration: 'none'}}>View Owner Profile</button>
+          </div>
+        </Link>
       </div>
     )
 }

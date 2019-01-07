@@ -23,7 +23,7 @@ class RentalDetail extends React.Component {
           <div className='upper-section'>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={rental.image} alt=''></img>
+                <img src={rental.image} alt='' style={{height: '360px'}}></img>
               </div>
               <div className='col-md-6'>
                 <RentalMap location={`${rental.city}, ${rental.street}`} />
@@ -33,11 +33,24 @@ class RentalDetail extends React.Component {
 
           <div className='details-section'>
             <div className='row'>
-              <div className='col-md-8'>
+              <div className='col-md-3'>
+              </div>
+              <div className='col-md-6'>
                 <RentalDetailInfo rental={rental} />
               </div>
-              <div className='col-md-4'>
+              <div className='col-md-3'>
+              </div>
+            </div>
+          </div>
+
+          <div className='details-section mt-5'>
+            <div className='row'>
+              <div className='col-md-3'>
+              </div>
+              <div className='col-md-6'>
                <Booking rental={rental} />
+              </div>
+              <div className='col-md-3'>
               </div>
             </div>
           </div>

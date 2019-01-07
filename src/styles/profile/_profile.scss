@@ -1,0 +1,49 @@
+
+.row-full {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  height: 100px;
+  margin-top: -40px;
+  left: 50%;
+  border-bottom: 2px solid black;
+}
+
+.outer {
+  position: relative;
+  background-color: #E8E8EE;
+  z-index: 0;
+  width: 100% !important;
+  height: 200px;
+  margin: 20px 0px;
+  border-bottom: 2px solid black;
+}
+
+.inner {
+  position: relative;
+  border-radius: 100px;
+  border: 2px solid black;
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+  top: 20px;
+  left: 50%;
+  margin-left: -100px;
+}
+
+
+
+// @media (max-width:768px) {
+//
+//   .fb-profile-text>h1{
+//       font-weight: 700;
+//       font-size:16px;
+//   }
+//
+//   .fb-image-profile
+//   {
+//       margin: -15px 10px 0px 25px;
+//       z-index: 9;
+//       width: 20%;
+//   }
+// }

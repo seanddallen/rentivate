@@ -61,8 +61,7 @@ export class RentalManage extends React.Component {
         </div>
         { !isFetching && userRentals.length === 0 &&
           <div className='alert alert-warning'>
-            You dont have any rentals currenty created. If you want advertised your property
-            please follow this link.
+            You dont have any rentals currenty created. Click to add a rental.
             <Link style={{'marginLeft': '10px'}} className='btn btn-bwm' to='/rentals/new'>Register Rental</Link>
           </div>
         }

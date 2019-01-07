@@ -141,11 +141,11 @@ export class FileUpload extends React.Component {
     const { status } = this.state;
 
     if (status === 'OK') {
-      return <div className='alert alert-success'> Image Uploaded Succesfuly! </div>
+      return <div className='alert alert-success'> Image Upload Successful. </div>
     }
 
     if (status === 'FAIL') {
-      return <div className='alert alert-danger'> Image Upload Failed! </div>
+      return <div className='alert alert-danger'> Image Upload Failed. </div>
     }
   }
 
@@ -154,7 +154,7 @@ export class FileUpload extends React.Component {
 
     return (
       <div className='img-upload-container'>
-        <label className='img-upload btn btn-bwm'>
+        <label className='img-upload btn btn-success'>
          <span className='upload-text'> Select an image </span>
          <input type='file'
                 accept='.jpg, .png, .jpeg'

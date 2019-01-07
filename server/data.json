@@ -1,71 +1,71 @@
 {
   "listings": [{
       "title": "Boombox",
-      "state": "AZ",
-      "address": "Main address",
+      "city": "phoenix",
+      "street": "Main street",
       "category": "electronics",
       "condition": "good",
-      "image": "http://via.placeholder.com/350x250",
+      "image": "https://i.ebayimg.com/images/i/253342192899-0-1/s-l1000.jpg",
       "description": "here is the description",
       "rate": 43
       },
       {
       "title": "Snowboard",
-      "state": "AZ",
-      "address": "Time Square",
-      "category": "outdoor",
+      "city": "phoenix",
+      "street": "Time Square",
+      "category": "sporting",
       "condition": "good",
-      "image": "http://via.placeholder.com/350x250",
+      "image": "https://static.turbosquid.com/Preview/2014/05/26__13_45_45/SnowBoard_Type11_00.jpgd5b68605-fd46-4eec-be38-961de262520eOriginal.jpg",
       "description": "here is the description",
       "rate": 11
       },
       {
       "title": "Lawnmower",
-      "state": "AZ",
-      "address": "Banicka 1",
+      "city": "phoenix",
+      "street": "Banicka 1",
       "category": "equipment",
       "condition": "good",
-      "image": "http://via.placeholder.com/350x250",
+      "image": "http://nebula.wsimg.com/2adcf5fe348f9aa102b54253cf94bc4a?AccessKeyId=96FE4A071EE06423C2A3&disposition=0&alloworigin=1",
       "description": "here is the description",
       "rate": 23
     },
     {
       "title": "xbox360",
-      "state": "AZ",
-      "address": "Green address",
+      "city": "phoenix",
+      "street": "Green street",
       "category": "electronics",
       "condition": "good",
-      "image": "http://via.placeholder.com/350x250",
+      "image": "https://s.hswstatic.com/gif/three-sixty-1.jpg",
       "description": "here is the description",
       "rate": 140
       },
       {
       "title": "camera",
-      "state": "AZ",
-      "address": "Union Street",
-      "category": "photo/video",
+      "city": "phoenix",
+      "street": "Union Street",
+      "category": "electronics",
       "condition": "good",
-      "image": "http://via.placeholder.com/350x250",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/92/Pentax_MX_camera.jpg",
       "description": "here is the description",
       "rate": 89
       },
       {
       "title": "power drill",
-      "state": "AZ",
-      "address": "Long Island, Queens",
+      "city": "phoenix",
+      "street": "Long Island, Queens",
       "category": "tools",
       "condition": "good",
-      "image": "http://via.placeholder.com/350x250",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51BOsNxvFuL._SX425_.jpg",
       "description": "here is the description",
       "rate": 189
     },
     {
       "title": "toyota prius",
-      "state": "AZ",
-      "address": "Penn Station",
+      "city": "phoenix",
+      "street": "Penn Station",
       "category": "vehicles",
       "condition": "good",
-      "image": "http://via.placeholder.com/350x250",
+      "image": "https://attachments.priuschat.com/attachment-files/2016/04/104467_2016_prius_-5.jpg",
       "description": "here is the description",
       "rate": 68
     }
@@ -78,6 +78,10 @@
     "username": "Test User1",
     "email": "test1@gmail.com",
     "password": "testtest1"
+    },{
+    "username": "sean",
+    "email": "sean@test.com",
+    "password": "asdf"
     }
   ]
 }

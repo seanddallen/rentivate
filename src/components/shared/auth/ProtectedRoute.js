@@ -9,6 +9,6 @@ export function ProtectedRoute(props) {
   return (
     <Route {...rest} render={(props) => authService.isAuthenticated()
                                         ? <Component {...props} {...rest}/>
-                                        : <Redirect to={{pathname: '/login'}}/>}/>
+                                        : <Redirect to={{pathname: '/categories'}}/>}/>
     )
 }

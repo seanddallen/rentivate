@@ -27,7 +27,7 @@ class BookingManage extends React.Component {
         </div>
         { !isFetching && bookings.length === 0 &&
           <div className="alert alert-warning">
-            You have no bookings created go to rentals section and book your place today.
+            You have no bookings created.
             <Link style={{'marginLeft': '10px'}} className="btn btn-bwm" to="/rentals">Available Rental</Link>
           </div>
         }
@@ -38,7 +38,7 @@ class BookingManage extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    userBookings: state.userBookings
+    userBookings: state.bookings
   }
 }
 

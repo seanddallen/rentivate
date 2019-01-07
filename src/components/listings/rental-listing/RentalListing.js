@@ -1,6 +1,7 @@
 import React from 'react';
 import { RentalList } from './RentalList';
 import { connect } from 'react-redux';
+import RentalSearchInput from '../RentalSearchInput';
 
 import * as actions from '../../../actions/listingsActions';
 
@@ -12,10 +13,13 @@ class RentalListing extends React.Component {
   }
 
   render() {
+
+    const rentals = this.props.rentals.filter(rental => rental.category == this.props.match.params.id)
+
     return (
       <section id="rentalListing">
-        <h1 className="page-title">Your Home All Around the World</h1>
-        <RentalList rentals={this.props.rentals} />
+        <RentalSearchInput />
+        <RentalList rentals={rentals} />
       </section>
     )
   }

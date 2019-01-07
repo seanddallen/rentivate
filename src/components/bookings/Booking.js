@@ -22,7 +22,6 @@ class Booking extends React.Component {
       proposedBooking: {
         startAt: '',
         endAt: '',
-        guests: ''
       },
       modal: {
         open: false
@@ -71,14 +70,14 @@ class Booking extends React.Component {
     });
   }
 
-  selectGuests(event) {
-    this.setState({
-      proposedBooking: {
-        ...this.state.proposedBooking,
-        guests: parseInt(event.target.value, 10)
-      }
-    })
-  }
+  // selectGuests(event) {
+  //   this.setState({
+  //     proposedBooking: {
+  //       ...this.state.proposedBooking,
+  //       guests: parseInt(event.target.value, 10)
+  //     }
+  //   })
+  // }
 
   cancelConfirmation() {
     this.setState({
@@ -96,7 +95,7 @@ class Booking extends React.Component {
   resetData() {
     this.dateRef.current.value = '';
 
-    this.setState({proposedBooking: {guests: ''}});
+    // this.setState({proposedBooking: "{guests: ''}"});
   }
 
   confirmProposedData() {
@@ -108,7 +107,7 @@ class Booking extends React.Component {
       proposedBooking: {
         ...this.state.proposedBooking,
         days,
-        totalPrice: days * rental.dailyRate,
+        totalPrice: days * rental.rate,
         rental
       },
       modal: {
@@ -123,7 +122,7 @@ class Booking extends React.Component {
         this.addNewBookedOutDates(booking);
         this.cancelConfirmation();
         this.resetData();
-        toast.success('Booking has been succesfuly created! Enjoy.');
+        toast.success('Booking has been successfully created. Enjoy.');
       },
       (errors) => {
         this.setState({errors});
@@ -132,15 +131,15 @@ class Booking extends React.Component {
 
   render() {
     const { rental, auth: { isAuth } } = this.props;
-    const { startAt, endAt, guests } = this.state.proposedBooking;
+    const { startAt, endAt } = this.state.proposedBooking;
 
     return (
-      <div className='booking'>
-        <h3 className='booking-price'>$ {rental.dailyRate} <span className='booking-per-night'>per night</span></h3>
+      <div className='booking mb-4'>
+        <h3 className='booking-price'>$ {rental.rate} <span className='booking-per-night'>per day</span></h3>
         <hr></hr>
         { !isAuth &&
           <Link className='btn btn-bwm btn-confirm btn-block' to={{pathname: '/login'}}>
-            Login to book place.
+            Login to book.
           </Link>
         }
         { isAuth &&
@@ -154,7 +153,7 @@ class Booking extends React.Component {
               <input ref={this.dateRef} id='dates' type='text' className='form-control'></input>
             </DateRangePicker>
             </div>
-            <div className='form-group'>
+            {/* <div className='form-group'>
               <label htmlFor='guests'>Guests</label>
               <input onChange={(event) => { this.selectGuests(event)}}
                      value={guests}
@@ -164,21 +163,21 @@ class Booking extends React.Component {
                      aria-describedby='guests'
                      placeholder=''>
               </input>
-            </div>
-            <button disabled={!startAt || !endAt || !guests} onClick={() => this.confirmProposedData()} className='btn btn-bwm btn-confirm btn-block'>Reserve place now</button>
+            </div> */}
+            <button disabled={!startAt || !endAt} onClick={() => this.confirmProposedData()} className='btn btn-bwm btn-confirm btn-block'>Reserve now</button>
           </React.Fragment>
         }
-        <hr></hr>
-        <p className='booking-note-title'>People are interested into this house</p>
+        {/* <hr></hr> */}
+        {/* <p className='booking-note-title'>People are interested into this item</p>
         <p className='booking-note-text'>
-          More than 500 people checked this rental in last month.
-        </p>
+          More than 500 people checked this item in last month.
+        </p> */}
         <BookingModal open={this.state.modal.open}
                       closeModal={this.cancelConfirmation}
                       confirmModal={this.reserveRental}
                       booking={this.state.proposedBooking}
                       errors={this.state.errors}
-                      rentalPrice={rental.dailyRate}/>
+                      rentalPrice={rental.rate}/>
       </div>
     )
   }

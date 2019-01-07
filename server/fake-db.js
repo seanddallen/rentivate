@@ -1,4 +1,4 @@
-const Listing = require('./models/listing');
+const Listing = require('./models/Listing');
 const User = require('./models/user');
 const Booking = require('./models/booking');
 
@@ -22,7 +22,7 @@ class FakeDb {
     const user2 = new User(this.users[1]);
 
     this.listings.forEach((listing) => {
-      const newListing = new Rental(listing);
+      const newListing = new Listing(listing);
       newListing.user = user;
 
       user.listings.push(newListing);

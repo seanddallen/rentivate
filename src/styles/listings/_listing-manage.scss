@@ -1,4 +1,4 @@
-#userListings {
+#userRentals {
 
   .toBeDeleted {
     border-color: red;
@@ -20,6 +20,7 @@
     font-size: 14px;
     color: white;
     padding: 10px 15px;
+    background-color: $main-color !important;
   }
 
   .card-footer {
@@ -27,9 +28,9 @@
   }
 
   .btn-bookings {
-    border-color: $main-color;
+    border-color: $main-color !important;
     background-color: transparent;
-    color: $main-color;
+    color: $main-color !important;
 
     &:hover, &:focus {
       border-color: $main-color !important;
