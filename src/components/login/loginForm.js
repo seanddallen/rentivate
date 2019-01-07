@@ -1,8 +1,8 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Input } from 'components/shared/form/input';
-import { ResError } from 'components/shared/form/resError';
-import { required, minLength4 } from 'components/shared/form/validators';
+import { Input } from 'components/shared/form/Input';
+import { ResError } from 'components/shared/form/ResError';
+import { required, minLength4 } from 'components/shared/form/Validators';
 
 const LoginForm = props => {
   const { handleSubmit, pristine, submitting, submitCb, valid, errors } = props

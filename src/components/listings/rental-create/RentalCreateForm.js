@@ -1,10 +1,10 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Input } from 'components/shared/form/input';
+import { Input } from 'components/shared/form/Input';
 import { Select } from 'components/shared/form/Select';
 import { TextArea } from 'components/shared/form/TextArea';
 import { FileUpload } from 'components/shared/form/FileUpload';
-import { ResError } from 'components/shared/form/resError';
+import { ResError } from 'components/shared/form/ResError';
 // import { required, minLength4 } from 'components/shared/form/validators';
 
 const RentalCreateForm = props => {

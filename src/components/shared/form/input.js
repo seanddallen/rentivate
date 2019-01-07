@@ -1,4 +1,5 @@
 import React from 'react';
+import { MDBInput } from "mdbreact";
 
 export const Input = ({
   input,
@@ -18,6 +19,7 @@ export const Input = ({
         </div>
       }
       <input {...input} type={type} className={className} />
+      {/* <MDBInput type={type} className={className} label={label} /> */}
     </div>
       {touched &&
         ((error && <div className='alert alert-danger'>{error}

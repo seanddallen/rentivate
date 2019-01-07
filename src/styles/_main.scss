@@ -5,7 +5,7 @@
 @import 'form/form.scss';
 
 @import 'bookings/booking.scss';
-@import 'listings/rental-card.scss';
+// @import 'listings/rental-card.scss';
 @import 'listings/listing.scss';
 @import 'listings/listings.scss';
 @import 'listings/listing-manage.scss';
@@ -92,3 +92,14 @@
     color: $main-white-color !important;
     opacity: 1 !important;
 }  // }
+
+
+.alert {
+  margin-top: 10px !important;
+}
+.alert-danger {
+  border-left: solid 3px darkred !important;
+}
+.alert-success {
+  border-left: solid 3px darkgreen !important;
+}

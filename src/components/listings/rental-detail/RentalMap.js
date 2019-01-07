@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapWithGeocode} from 'components/map/googleMap';
+import { MapWithGeocode} from 'components/map/GoogleMap';
 import { connect } from 'react-redux';
 
 import * as actions from '../../../actions/mapActions';

@@ -14,8 +14,8 @@ import RentalDetail from 'components/listings/rental-detail/RentalDetail';
 import RentalUpdate from 'components/listings/rental-detail/RentalUpdate';
 import Profile from 'components/profile/Profile';
 import { RentalCreate } from 'components/listings/rental-create/RentalCreate';
-import Login from 'components/login/login';
-import { Register } from 'components/register/register';
+import Login from 'components/login/Login';
+import { Register } from 'components/register/Register';
 
 import { RentalManage } from 'components/listings/rental-manage/RentalManage';
 import BookingManage from 'components/bookings/BookingManage';

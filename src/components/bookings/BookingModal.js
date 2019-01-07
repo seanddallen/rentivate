@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
-import { ResError } from 'components/shared/form/resError';
+import { ResError } from 'components/shared/form/ResError';
 
 export function BookingModal(props) {
   const { open, closeModal, booking, confirmModal, errors, rentalPrice } = props;

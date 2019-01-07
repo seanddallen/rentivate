@@ -71,15 +71,15 @@
     }
   ],
   "users": [{
-    "username": "Test User",
-    "email": "test@gmail.com",
+    "username": "Test Renter",
+    "email": "renter@test.com",
     "password": "testtest"
     },{
-    "username": "Test User1",
-    "email": "test1@gmail.com",
+    "username": "Test Owner",
+    "email": "owner@test.com",
     "password": "testtest1"
     },{
-    "username": "sean",
+    "username": "Sean Tayler",
     "email": "sean@test.com",
     "password": "asdf"
     }

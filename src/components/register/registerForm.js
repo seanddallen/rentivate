@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Input } from 'components/shared/form/input';
-import { ResError } from 'components/shared/form/resError';
+import { Input } from 'components/shared/form/Input';
+import { ResError } from 'components/shared/form/ResError';
 
 const RegisterForm = props => {
   const { handleSubmit, pristine, submitting, submitCb, valid, errors } = props
