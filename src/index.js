@@ -9,6 +9,7 @@ import logger from 'redux-logger'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
+import "mdbreact/dist/css/mdb.css";
 import 'bootstrap-daterangepicker/daterangepicker.css';
 import 'react-toastify/dist/ReactToastify.min.css';
 import 'react-image-crop/dist/ReactCrop.css';

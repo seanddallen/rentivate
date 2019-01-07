@@ -1,5 +1,5 @@
 import React from 'react'
-import CheckoutForm from '.CheckoutForm'
+import CheckoutForm from './CheckoutForm'
 import {Elements} from 'react-stripe-elements';
 
 class Payment extends React.Component {
@@ -8,9 +8,9 @@ class Payment extends React.Component {
     return(
       <Elements>
         <CheckoutForm />
-      </Elements> 
+      </Elements>
     )
   }
 }
 
-export default Component
+export default Payment

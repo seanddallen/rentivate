@@ -20,6 +20,19 @@ const createOptions = () => {
   };
 };
 
+const formStyles = () => {
+  return {
+    style: {
+      height: '100px',
+      backgroundColor: '#fbfbfb',
+      padding: '5px',
+      marginTop: '15px'
+    }
+  }
+}
+
+
+
 class CheckoutForm extends React.Component {
 
   handleSubmit = (e) => {
@@ -29,7 +42,7 @@ class CheckoutForm extends React.Component {
 
   render(){
     return(
-      <form onSubmit={() => this.handleSubmit}>
+      <form {...formStyles()} onSubmit={() => this.handleSubmit}>
         <CardElement {...createOptions()} />
         <p>You will not be charged until approved by owner</p>
         <button className='btn btn-success'>Confirm Payment</button>
