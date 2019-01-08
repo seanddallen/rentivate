@@ -17,7 +17,7 @@ export const Input = ({
           </div>
         </div>
       }
-      <MDBInput {...input} type={type} className={className} label={label} />
+      <MDBInput {...input} type={type} className={className} label={label} autocomplete="off" />
     </div>
       {touched &&
         ((error && <div className='alert alert-danger'>{error}

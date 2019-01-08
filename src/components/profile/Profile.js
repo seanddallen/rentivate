@@ -21,7 +21,7 @@ class Profile extends React.Component {
         <div className="row-full">
           <div className="outer">
             <h5 className="text-center" style={{paddingTop: '40px'}}>{this.props.auth.username}</h5>
-            <img className="inner thumbnail" src="http://lorempixel.com/180/180/people/9/" />
+            <img className="inner thumbnail" src={require("../../img/sean.jpg")} />
           </div>
         </div>
         <div className="text-center" style={{marginTop: '250px'}}>

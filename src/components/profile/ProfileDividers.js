@@ -15,7 +15,7 @@ const ProfileDividers = () => (
       <Table.Body>
         <Table.Row>
           <Table.Cell width={2}>Contact </Table.Cell>
-          <Table.Cell>email@test.com</Table.Cell>
+          <Table.Cell>sean@test.com</Table.Cell>
         </Table.Row>
         <Table.Row>
           <Table.Cell>Joined</Table.Cell>

@@ -41,7 +41,7 @@ export class RentalManageCard extends React.Component {
       <div className='col-md-4'>
         <div className={`card text-center ${deleteClass}`}>
           <div className='card-block'>
-            <h4 className='card-title'>{rental.title} - {toUpperCase(rental.city)}</h4>
+            <h4 className='card-title'>{rental.title}</h4>
             <Link className='btn btn-bwm' to={`/rentals/${rental._id}`}>View Rental</Link>
             { rental.bookings && rental.bookings.length > 0 && modal }
           </div>
