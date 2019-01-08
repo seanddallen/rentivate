@@ -4,7 +4,7 @@ import { Col, Container, Row, Footer } from "mdbreact";
 class Foot extends React.Component {
   render() {
     return (
-    <Footer color="blue" className="font-small pt-3 mt-2" style={{backgroundColor: 'black'}}>
+    <Footer color="black" className="font-small pt-3 mt-2" style={{backgroundColor: 'black !important'}}>
       <Container fluid className="text-center text-md-left" style={{display: 'flex', justifyContent: 'center'}}>
         <Row style={{display: 'flex', justifyContent: 'center'}}>
           <Col md="1" style={{margin: '0 30px'}}>
