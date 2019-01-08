@@ -23,6 +23,7 @@ class Booking extends React.Component {
       proposedBooking: {
         startAt: '',
         endAt: '',
+        paymentToken: ''
       },
       modal: {
         open: false
@@ -34,6 +35,7 @@ class Booking extends React.Component {
     this.handleApply = this.handleApply.bind(this);
     this.cancelConfirmation = this.cancelConfirmation.bind(this);
     this.reserveRental = this.reserveRental.bind(this);
+    this.setPaymentToken = this.setPaymentToken.bind(this);
   }
 
 
@@ -71,21 +73,18 @@ class Booking extends React.Component {
     });
   }
 
-  // selectGuests(event) {
-  //   this.setState({
-  //     proposedBooking: {
-  //       ...this.state.proposedBooking,
-  //       guests: parseInt(event.target.value, 10)
-  //     }
-  //   })
-  // }
-
   cancelConfirmation() {
     this.setState({
       modal: {
         open: false
       }
     })
+  }
+
+  setPaymentToken(paymentToken){
+    const {proposedBooking} =  this.state
+    proposedBooking.paymentToken = paymentToken;
+    this.setState({proposedBooking})
   }
 
   addNewBookedOutDates(booking) {
@@ -95,8 +94,6 @@ class Booking extends React.Component {
 
   resetData() {
     this.dateRef.current.value = '';
-
-    // this.setState({proposedBooking: "{guests: ''}"});
   }
 
   confirmProposedData() {
@@ -132,9 +129,10 @@ class Booking extends React.Component {
 
   render() {
     const { rental, auth: { isAuth } } = this.props;
-    const { startAt, endAt } = this.state.proposedBooking;
+    const { startAt, endAt, paymentToken } = this.state.proposedBooking;
 
     return (
+
       <div className='booking mb-4'>
         <h3 className='booking-price'>$ {rental.rate} <span className='booking-per-night'>per day</span></h3>
         <hr></hr>
@@ -146,41 +144,27 @@ class Booking extends React.Component {
         { isAuth &&
           <React.Fragment>
             <div className='form-group'>
-            <label htmlFor='dates'>Dates</label>
-            <DateRangePicker onApply={this.handleApply}
-                             isInvalidDate={this.checkInvalidDates}
-                             opens='left'
-                             containerStyles={{display: 'block'}}>
-              <input ref={this.dateRef} id='dates' type='text' className='form-control'></input>
-            </DateRangePicker>
+              <label htmlFor='dates'>Dates</label>
+              <DateRangePicker onApply={this.handleApply}
+                               isInvalidDate={this.checkInvalidDates}
+                               opens='left'
+                               containerStyles={{display: 'block'}}>
+                <input ref={this.dateRef} id='dates' type='text' className='form-control'></input>
+              </DateRangePicker>
             </div>
-            {/* <div className='form-group'>
-              <label htmlFor='guests'>Guests</label>
-              <input onChange={(event) => { this.selectGuests(event)}}
-                     value={guests}
-                     type='number'
-                     className='form-control'
-                     id='guests'
-                     aria-describedby='guests'
-                     placeholder=''>
-              </input>
-            </div> */}
             <button disabled={!startAt || !endAt} onClick={() => this.confirmProposedData()} className='btn btn-bwm btn-confirm btn-block'>Reserve now</button>
           </React.Fragment>
-        }
-        {/* <hr></hr> */}
-        {/* <p className='booking-note-title'>People are interested into this item</p>
-        <p className='booking-note-text'>
-          More than 500 people checked this item in last month.
-        </p> */}
-        <BookingModal open={this.state.modal.open}
+          <BookingModal open={this.state.modal.open}
                       closeModal={this.cancelConfirmation}
                       confirmModal={this.reserveRental}
                       booking={this.state.proposedBooking}
                       errors={this.state.errors}
                       rentalPrice={rental.rate}
-                      acceptPayment={() => <Payment />} />
-      </div>
+                      disabled={!paymentToken}
+                      acceptPayment={() => <Payment setPaymentToken={this.setPaymentToken} />}
+          />
+      }
+    </div>
     )
   }
 }

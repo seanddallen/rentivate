@@ -23,7 +23,7 @@ const createOptions = () => {
 const formStyles = () => {
   return {
     style: {
-      height: '100px',
+      height: '100%',
       backgroundColor: '#fbfbfb',
       padding: '5px',
       marginTop: '15px'
@@ -31,21 +31,58 @@ const formStyles = () => {
   }
 }
 
+const buttonStyles = () => {
+  return {
+    style: {}
+  }
+}
 
+const paragraphStyles = () => {
+  return {
+    style: {
+      marginTop: '5px',
+      fontSize: '11px',
+      color: '#aab7c4'
+    }
+  }
+}
 
 class CheckoutForm extends React.Component {
 
+  state = {
+    error: undefined
+  }
+
   handleSubmit = (e) => {
     e.preventDefault()
-    const { stripe } = this.props
+    const { stripe, paymentToken } = this.props
+
+    if(stripe){
+      stripe.createToken()
+        .then((payload) => {
+          if(payload.error){
+            setPaymentToken(undefined)
+            return this.setState({error: payload.error.message})
+          }
+          setPaymentToken(payload.token.id)
+        })
+    } else {
+      console.error('Stripe has not loaded yet.')
+    }
+
   }
 
   render(){
+    const { error } = this.state;
+
     return(
       <form {...formStyles()} onSubmit={() => this.handleSubmit}>
         <CardElement {...createOptions()} />
-        <p>You will not be charged until approved by owner</p>
-        <button className='btn btn-success'>Confirm Payment</button>
+        <p {...paragraphStyles()}>*You will not be charged until approved by owner</p>
+
+        {error && <div className='alert alert-danger alert-payment'> {error} </div>}
+
+        <button {...buttonStyles()} className='btn btn-success'>Confirm Payment</button>
       </form>
     )
   }
