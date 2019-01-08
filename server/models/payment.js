@@ -8,7 +8,7 @@ const paymentSchema = new Schema({
   booking: { type: Schema.Types.ObjectId, ref: 'Booking' },
   amount: Number,
   tokenId: String,
-  charge: { Schema.Types.Mixed },
+  charge: Schema.Types.Mixed,
   status: { type: String, default: 'pending' }
 });
 

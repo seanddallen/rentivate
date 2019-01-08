@@ -3,7 +3,7 @@ import Modal from 'react-responsive-modal';
 import { ResError } from 'components/shared/form/ResError';
 
 export function BookingModal(props) {
-  const { open, closeModal, booking, confirmModal, errors, rentalPrice, acceptPayment } = props;
+  const { open, closeModal, booking, confirmModal, errors, rentalPrice, acceptPayment, disabled } = props;
 
   return (
     <Modal open={open} onClose={closeModal} little classNames={{ modal: 'booking-modal' }}>

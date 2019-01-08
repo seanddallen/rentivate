@@ -13,7 +13,7 @@ exports.getPendingPayments = function(req, res) {
       populate: {path: 'rental'}
     })
     .populate('fromUser')
-    .exec(function(err, foundPayments) => {
+    .exec((err, foundPayments) => {
       if(err){
         return res.status(422).send({errors: normalizeErrors(err.errors)});
       }

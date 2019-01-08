@@ -153,7 +153,6 @@ class Booking extends React.Component {
               </DateRangePicker>
             </div>
             <button disabled={!startAt || !endAt} onClick={() => this.confirmProposedData()} className='btn btn-bwm btn-confirm btn-block'>Reserve now</button>
-          </React.Fragment>
           <BookingModal open={this.state.modal.open}
                       closeModal={this.cancelConfirmation}
                       confirmModal={this.reserveRental}
@@ -163,6 +162,7 @@ class Booking extends React.Component {
                       disabled={!paymentToken}
                       acceptPayment={() => <Payment setPaymentToken={this.setPaymentToken} />}
           />
+        </React.Fragment>
       }
     </div>
     )

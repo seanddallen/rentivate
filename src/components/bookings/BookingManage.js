@@ -5,6 +5,7 @@ import { BookingCard, PaymentCard } from './BookingCard';
 
 import * as actions from '../../actions/bookingsActions';
 import * as action from '../../actions/authActions';
+import * as act from '../../actions/paymentActions';
 
 class BookingManage extends React.Component {
 
@@ -18,21 +19,19 @@ class BookingManage extends React.Component {
   }
 
   getPendingPayments(){
-    actions.getPendingPayments()
+    act.getPendingPayments()
       .then(pendingPayments => this.setState({pendingPayments}))
       .catch(err => console.error(err))
   }
 
-  acceptPayment(){
-    const
-    actions.acceptPayment(payment)
+  acceptPayment(payment){
+    act.acceptPayment(payment)
       .then(status => {this.getPendingPayments()})
       .catch(err => console.error(err))
   }
 
-  declinePayment(){
-    const
-    actions.declinePayment(payment)
+  declinePayment(payment){
+    act.declinePayment(payment)
       .then(status => {this.getPendingPayments()})
       .catch(err => console.error(err))
   }
@@ -84,7 +83,7 @@ class BookingManage extends React.Component {
             </div>
           }
         </section>
-      <React.Fragment>
+      </React.Fragment>
     )
   }
 }

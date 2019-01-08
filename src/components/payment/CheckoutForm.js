@@ -55,7 +55,7 @@ class CheckoutForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const { stripe, paymentToken } = this.props
+    const { stripe, setPaymentToken } = this.props
 
     if(stripe){
       stripe.createToken()
