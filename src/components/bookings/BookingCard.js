@@ -38,7 +38,7 @@ export function PaymentCard(props) {
   const { booking, payment, paymentBtns } = props;
 
   return (
-    <div className="col-md-4">
+    <div className="col-md-4 mt-4">
       <div className="card text-center">
         <div className="card-header">
           Booking made by { payment.fromUser.username }

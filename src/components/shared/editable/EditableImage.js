@@ -23,7 +23,7 @@ export class EditableImage extends EditableComponent {
       <div className='editableComponent'>
         { !isActive &&
           <React.Fragment>
-            <img src={value} alt=''/>
+            <img src={value} alt='' style={{height: '360px'}}/>
             <i className='fa fa-edit' style={{cursor: 'pointer'}} onClick={() => this.enableEdit()}></i>
 
             {/* <button onClick={() => this.enableEdit() }

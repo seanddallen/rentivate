@@ -77,7 +77,7 @@ class BookingManage extends React.Component {
           <div className="row">
           { this.renderPayments(pendingPayments) }
           </div>
-          { !isFetching && bookings.length === 0 &&
+          { !isFetching && pendingPayments.length === 0 &&
             <div className="alert alert-warning">
               You have no pending bookings.
             </div>

@@ -83,20 +83,13 @@ class RentalUpdate extends React.Component {
                 </div>
               </div>
             </div>
+          </section>
 
+          <section>
             <div className='details-section'>
               <div className='row'>
                 <div className='col-md-8'>
                   <div className='rental'>
-                    {/* <label className={`rental-label rental-type ${rental.category}`}> Shared </label>
-                    <EditableSelect entity={rental}
-                                    entityField={'shared'}
-                                    className={`rental-type ${rental.category}`}
-                                    updateEntity={this.updateRental}
-                                    options={[true, false]}
-                                    containerStyle={{'display': 'inline-block'}}
-                                    errors={errors}
-                                    resetErrors={this.resetRentalErrors} /> */}
 
                     <EditableSelect entity={rental}
                                     entityField={'category'}
@@ -105,12 +98,7 @@ class RentalUpdate extends React.Component {
                                     options={['appliances', 'camping', 'clothing', 'electronics', 'equipment', 'furniture', 'games', 'general', 'household', 'instruments', 'media', 'recreational', 'sporting', 'tools',  'vehicles']}
                                     errors={errors}
                                     resetErrors={this.resetRentalErrors} />
-
-                    <div className="rental-owner">
-                      {/* <img src="https://api.adorable.io/avatars/285/abott@adorable.png" alt="owner"/> */}
-                      {/* <span>{rental.user && rental.user.username}</span> */}
-                    </div>
-
+                    <hr></hr>
                     <EditableInput entity={rental}
                                    entityField={'title'}
                                    className={'rental-title'}
@@ -118,6 +106,7 @@ class RentalUpdate extends React.Component {
                                    errors={errors}
                                    resetErrors={this.resetRentalErrors}  />
 
+                    <hr></hr>
                     <EditableInput entity={rental}
                                    entityField={'city'}
                                    className={'rental-city'}
@@ -125,14 +114,14 @@ class RentalUpdate extends React.Component {
                                    errors={errors}
                                    formatPipe={[toUpperCase]}
                                    resetErrors={this.resetRentalErrors} />
-
+                    <hr></hr>
                     <EditableInput entity={rental}
                                    entityField={'street'}
                                    className={'rental-street'}
                                    updateEntity={this.updateRental}
                                    errors={errors}
                                    resetErrors={this.resetRentalErrors} />
-
+                    <hr></hr>
                     <EditableText  entity={rental}
                                    entityField={'description'}
                                    className={'rental-description'}
@@ -144,9 +133,9 @@ class RentalUpdate extends React.Component {
                     <hr></hr>
                   </div>
                 </div>
-                <div className='col-md-4'>
+                {/* <div className='col-md-4'>
                  <Booking rental={rental} />
-                </div>
+                </div> */}
               </div>
             </div>
           </section>

@@ -1,5 +1,8 @@
 const Payment = require('../models/payment');
 const { normalizeErrors } = require('../services/mongoose');
+const Booking = require('../models/booking');
+const Rental = require('../models/listing');
+const User = require('../models/user');
 const config = require('../config')
 const stripe = require('stripe')(config.STRIPE_SK);
 
