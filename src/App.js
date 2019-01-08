@@ -50,6 +50,7 @@ class App extends Component {
           <div className='container'>
             <Switch>
               <Route exact path='/' render={() =>  <Redirect to='/categories' /> }/>
+              <Route exact path='/rentals' render={() =>  <Redirect to='/categories' /> }/>
               <Route exact path='/categories' component={CategoriesList} />
               <Route exact path='/categories/:id' component={RentalListing} />
               <Route exact path='/rentals/:city/items' component={RentalSearchListing} />

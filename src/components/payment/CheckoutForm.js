@@ -76,7 +76,7 @@ class CheckoutForm extends React.Component {
     const { error } = this.state;
 
     return(
-      <form {...formStyles()} onSubmit={() => this.handleSubmit}>
+      <form {...formStyles()} onSubmit={this.handleSubmit}>
         <CardElement {...createOptions()} />
         <p {...paragraphStyles()}>*You will not be charged until approved by owner</p>
 

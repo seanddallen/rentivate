@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux'
-import { stripeProvider } from 'react-stripe-elements'
+import { StripeProvider } from 'react-stripe-elements'
 import {createStore, applyMiddleware, compose} from 'redux'
 import { init } from './store'
 import thunk from 'redux-thunk'
@@ -20,9 +20,9 @@ import App from './App';
 const store = require('./store').init();
 
 ReactDOM.render(
-  <stripeProvider apiKey="pk_test_KtmLCRdt3cxWATlX1TPJu1Au">
+  <StripeProvider apiKey="pk_test_KtmLCRdt3cxWATlX1TPJu1Au">
     <Provider store={store}>
       <App />
     </Provider>
-  </stripeProvider>
+  </StripeProvider>
   , document.getElementById('root'));
