@@ -60,7 +60,7 @@ class BookingManage extends React.Component {
 
     return (
       <React.Fragment>
-        <section id="userBookings">
+        {/* <section id="userBookings">
           <h1 className="page-title">My Bookings</h1>
           <div className="row">
           { this.renderBookings(bookings) }
@@ -68,12 +68,12 @@ class BookingManage extends React.Component {
           { !isFetching && bookings.length === 0 &&
             <div className="alert alert-warning">
               You have no bookings created.
-              <Link style={{'marginLeft': '10px'}} className="btn btn-bwm" to="/rentals">Available Rental</Link>
+              <Link style={{'marginLeft': '10px'}} className="btn btn-bwm" to="/categories">Available Rental</Link>
             </div>
           }
-        </section>
-        <section id="pendingBookings">
-          <h1 className="page-title">Pending Bookings</h1>
+        </section> */}
+        <section id="pendingBookings" style={{marginBottom: '540px'}}>
+          <h1 className="page-title">Manage Bookings</h1>
           <div className="row">
           { this.renderPayments(pendingPayments) }
           </div>

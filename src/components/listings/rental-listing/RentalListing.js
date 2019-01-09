@@ -17,7 +17,7 @@ class RentalListing extends React.Component {
     const rentals = this.props.rentals.filter(rental => rental.category == this.props.match.params.id)
 
     return (
-      <section id="rentalListing">
+      <section id="rentalListing" style={{marginBottom: '540px'}}>
         <RentalSearchInput />
         <RentalList rentals={rentals} />
       </section>

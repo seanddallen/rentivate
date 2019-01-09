@@ -64,12 +64,13 @@ const RentalCreateForm = props => {
         type="text"
         label='Daily Rate'
         className='form-control'
-        // symbol='$'
         component={Input}
       />
-      <button className='btn btn-lg btn-outline-danger' type="submit" disabled={!valid || pristine || submitting}>
-        Create Rental
-      </button>
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+        <button className='btn btn-lg btn-outline-danger' type="submit" disabled={!valid || pristine || submitting}>
+          Create Rental
+        </button>
+      </div>
       <ResError errors={errors} />
     </form>
   )

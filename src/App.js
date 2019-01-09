@@ -19,6 +19,7 @@ import { Register } from 'components/register/Register';
 
 import { RentalManage } from 'components/listings/rental-manage/RentalManage';
 import BookingManage from 'components/bookings/BookingManage';
+import BookingView from 'components/bookings/BookingView';
 
 import { ProtectedRoute } from 'components/shared/auth/ProtectedRoute';
 import { LoggedInRoute } from 'components/shared/auth/LoggedInRoute';
@@ -54,6 +55,7 @@ class App extends Component {
               <Route exact path='/categories' component={CategoriesList} />
               <Route exact path='/categories/:id' component={RentalListing} />
               <Route exact path='/rentals/:city/items' component={RentalSearchListing} />
+              <ProtectedRoute exact path='/rentals/bookings' component={BookingView} />
               <ProtectedRoute exact path='/rentals/manage' component={RentalManage} />
               <ProtectedRoute exact path='/bookings/manage' component={BookingManage} />
               <ProtectedRoute exact path='/rentals/new' component={RentalCreate} />

@@ -88,7 +88,7 @@ class Header extends React.Component {
           <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
             <div className='navbar-nav ml-auto'>
               { isAuth &&
-                <a className='nav-item nav-link' style={{color: '#FC473F'}}>{username}</a>
+                <a className='nav-item nav-link' style={{color: '#FC473F', cursor: 'default'}}>{username}</a>
               }
               {this.renderRenterSection(isAuth)}
               {this.renderOwnerSection(isAuth)}

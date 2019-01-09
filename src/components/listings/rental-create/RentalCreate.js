@@ -34,19 +34,15 @@ export class RentalCreate extends React.Component {
       <section id='newRental' style={{marginBottom: '40px'}}>
         <div className='bwm-form'>
           <div className='row'>
-            <div className='col-md-5'>
+            <div className='col-md-3'></div>
+            <div className='col-md-6'>
               <h1 className='page-title'>Create Rental</h1>
               <RentalCreateForm submitCb={this.createRental}
                                 options={this.rentalCategories}
                                 errors={this.state.errors}
                               />
             </div>
-            <div className='col-md-6 ml-auto'>
-              <div className='image-container'>
-                <h2 className='catchphrase'>Hundreds of rentals within just a few clicks.</h2>
-                <img src={process.env.PUBLIC_URL + '/img/create-rental.jpg'} alt=''/>
-              </div>
-            </div>
+            <div className='col-md-3'></div>
           </div>
         </div>
       </section>

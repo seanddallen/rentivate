@@ -54,7 +54,7 @@ class RentalSearchListing extends React.Component {
 
   render() {
     return (
-      <section id="rentalListing">
+      <section id="rentalListing" style={{marginBottom: '540px'}}>
         {this.renderTitle()}
         <RentalList rentals={this.props.rentals.data} />
       </section>
