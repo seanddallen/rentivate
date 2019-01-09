@@ -22,16 +22,11 @@ class RentalUpdate extends React.Component {
       isAllowed: false,
       isFetching: true
     }
-
-    this.updateRental = this.updateRental.bind(this);
-    this.resetRentalErrors = this.resetRentalErrors.bind(this);
-    this.verifyRentalOwner = this.verifyRentalOwner.bind(this);
   }
 
   componentWillMount() {
     // Dispatch action
     const rentalId = this.props.match.params.id;
-
     this.props.dispatch(actions.fetchRentalById(rentalId));
   }
 
@@ -39,17 +34,17 @@ class RentalUpdate extends React.Component {
     this.verifyRentalOwner();
   }
 
-  updateRental(rentalData) {
+  updateRental = (rentalData) => {
     const {rental: {_id}, dispatch } = this.props;
 
     dispatch(actions.updateRental(_id, rentalData));
   }
 
-  resetRentalErrors() {
+  resetRentalErrors = () => {
     this.props.dispatch(actions.resetRentalErrors());
   }
 
-  verifyRentalOwner() {
+  verifyRentalOwner = () => {
     const rentalId = this.props.match.params.id;
     this.setState({isFetching: true});
 

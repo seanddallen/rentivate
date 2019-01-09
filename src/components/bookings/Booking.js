@@ -31,11 +31,6 @@ class Booking extends React.Component {
       errors: []
     }
 
-    this.checkInvalidDates = this.checkInvalidDates.bind(this);
-    this.handleApply = this.handleApply.bind(this);
-    this.cancelConfirmation = this.cancelConfirmation.bind(this);
-    this.reserveRental = this.reserveRental.bind(this);
-    this.setPaymentToken = this.setPaymentToken.bind(this);
   }
 
 
@@ -43,7 +38,7 @@ class Booking extends React.Component {
     this.getBookedOutDates();
   }
 
-  getBookedOutDates() {
+  getBookedOutDates = () => {
     const {bookings} = this.props.rental;
 
     if (bookings && bookings.length > 0) {
@@ -54,11 +49,11 @@ class Booking extends React.Component {
     }
   }
 
-  checkInvalidDates(date) {
+  checkInvalidDates = (date) => {
     return this.bookedOutDates.includes(date.format('Y/MM/DD')) || date.diff(moment(), 'days') < 0;
   }
 
-  handleApply(event, picker) {
+  handleApply = (event, picker) => {
     const startAt = picker.startDate.format('Y/MM/DD');
     const endAt = picker.endDate.format('Y/MM/DD');
 
@@ -73,7 +68,7 @@ class Booking extends React.Component {
     });
   }
 
-  cancelConfirmation() {
+  cancelConfirmation = () => {
     this.setState({
       modal: {
         open: false
@@ -81,22 +76,22 @@ class Booking extends React.Component {
     })
   }
 
-  setPaymentToken(paymentToken){
+  setPaymentToken = (paymentToken) => {
     const {proposedBooking} =  this.state
     proposedBooking.paymentToken = paymentToken;
     this.setState({proposedBooking})
   }
 
-  addNewBookedOutDates(booking) {
+  addNewBookedOutDates = (booking) => {
     const dateRange = getRangeOfDates(booking.startAt, booking.endAt);
     this.bookedOutDates.push(...dateRange);
   }
 
-  resetData() {
+  resetData = () => {
     this.dateRef.current.value = '';
   }
 
-  confirmProposedData() {
+  confirmProposedData = () => {
     const {startAt, endAt} = this.state.proposedBooking;
     const days = getRangeOfDates(startAt, endAt).length - 1;
     const { rental } = this.props;
@@ -114,7 +109,7 @@ class Booking extends React.Component {
     });
   }
 
-  reserveRental() {
+  reserveRental = () => {
     action.createBooking(this.state.proposedBooking).then(
       (booking) => {
         this.addNewBookedOutDates(booking);
@@ -154,13 +149,13 @@ class Booking extends React.Component {
             </div>
             <button disabled={!startAt || !endAt} onClick={() => this.confirmProposedData()} className='btn btn-bwm btn-confirm btn-block'>Reserve now</button>
           <BookingModal open={this.state.modal.open}
-                      closeModal={this.cancelConfirmation}
-                      confirmModal={this.reserveRental}
-                      booking={this.state.proposedBooking}
-                      errors={this.state.errors}
-                      rentalPrice={rental.rate}
-                      disabled={!paymentToken}
-                      acceptPayment={() => <Payment setPaymentToken={this.setPaymentToken} />}
+                        closeModal={this.cancelConfirmation}
+                        confirmModal={this.reserveRental}
+                        booking={this.state.proposedBooking}
+                        errors={this.state.errors}
+                        rentalPrice={rental.rate}
+                        disabled={!paymentToken}
+                        acceptPayment={() => <Payment setPaymentToken={this.setPaymentToken} />}
           />
         </React.Fragment>
       }

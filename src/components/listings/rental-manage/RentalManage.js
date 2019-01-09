@@ -15,8 +15,6 @@ export class RentalManage extends React.Component {
       errors: [],
       isFetching: false
     }
-
-    this.deleteRental = this.deleteRental.bind(this);
   }
 
   componentWillMount() {
@@ -36,13 +34,13 @@ export class RentalManage extends React.Component {
                        deleteRentalCb={this.deleteRental} />);
   }
 
-  deleteRental(rentalId, rentalIndex) {
+  deleteRental = (rentalId, rentalIndex) => {
     actions.deleteRental(rentalId).then(
       () => this.deleteRentalFromList(rentalIndex),
       errors => toast.error(errors[0].detail))
   }
 
-  deleteRentalFromList(rentalIndex) {
+  deleteRentalFromList = (rentalIndex) => {
     const userRentals = this.state.userRentals.slice();
     userRentals.splice(rentalIndex, 1);
 

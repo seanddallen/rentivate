@@ -15,11 +15,9 @@ export class RentalCreate extends React.Component {
     }
 
     this.rentalCategories = ['appliances', 'camping', 'clothing', 'electronics', 'equipment', 'furniture', 'games', 'general', 'household', 'instruments', 'media', 'recreational', 'sporting', 'tools',  'vehicles'];
-
-    this.createRental = this.createRental.bind(this);
   }
 
-  createRental(rentalData) {
+  createRental = (rentalData) => {
     actions.createRental(rentalData).then(
       (rental) => this.setState({redirect: true}),
       (errors) => this.setState({errors}))

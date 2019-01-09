@@ -23,7 +23,7 @@ export class EditableSelect extends EditableComponent {
                   className='btn btn-success btn-editable'
                   type='button'> Save </button>
           <button onClick={() => this.disableEdit() }
-                  className='btn btn-warning btn-editable'
+                  className='btn btn-danger btn-editable'
                   type='button'> Close </button>
         </React.Fragment>
       )

@@ -7,11 +7,9 @@ class Header extends React.Component {
 
   constructor() {
     super();
-
-    this.handleLogout = this.handleLogout.bind(this);
   }
 
-  handleLogout() {
+  handleLogout = () => {
     this.props.logout();
     this.props.history.push('/rentals');
   }

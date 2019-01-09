@@ -20,8 +20,6 @@ export class FileUpload extends React.Component {
       status: 'INIT',
       crop: {}
     }
-
-    this.onChange = this.onChange.bind(this);
   }
 
   setupReader() {
@@ -51,7 +49,7 @@ export class FileUpload extends React.Component {
     });
   }
 
-  onChange(event) {
+  onChange = (event) => {
     const selectedFile = event.target.files[0];
 
     if (selectedFile) {

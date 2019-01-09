@@ -6,11 +6,9 @@ export class EditableImage extends EditableComponent {
 
   constructor() {
     super();
-
-    this.handleImageUpload = this.handleImageUpload.bind(this);
   }
 
-  handleImageUpload(image) {
+  handleImageUpload = (image) => {
     this.setState({value: image});
 
     this.update();
@@ -36,7 +34,7 @@ export class EditableImage extends EditableComponent {
         { isActive &&
           <React.Fragment>
             <button onClick={() => this.disableEdit() }
-                  className='btn btn-warning btn-editable btn-editable-image'
+                  className='btn btn-danger btn-editable btn-editable-image'
                   type='button'> Close
             </button>
             <FileUpload onChange={this.handleImageUpload}></FileUpload>

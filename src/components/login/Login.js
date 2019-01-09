@@ -8,11 +8,9 @@ class Login extends React.Component {
 
   constructor() {
     super();
-
-    this.loginUser = this.loginUser.bind(this);
   }
 
-  loginUser(userData) {
+  loginUser = (userData) => {
     this.props.dispatch(actions.login(userData));
   }
 

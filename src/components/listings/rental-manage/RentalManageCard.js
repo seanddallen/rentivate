@@ -57,7 +57,7 @@ export class RentalManageCard extends React.Component {
             }
             { wantDelete &&
               <div className='delete-menu'>
-                Do you confirm?
+                Confirm?
                 <button onClick={() => {this.deleteRental(rental._id, rentalIndex)}} className='btn btn-danger'> Yes </button>
                 <button onClick={() => { this.closeDeleteMenu() }} className='btn btn-success'> No </button>
               </div>

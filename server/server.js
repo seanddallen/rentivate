@@ -12,13 +12,6 @@ const rentalRoutes = require('./routes/listings'),
       paymentRoutes = require('./routes/payments')
       imageUploadRoutes = require('./routes/image-upload');
 
-// mongoose.connect(config.DB_URI).then(() => {
-//   if (process.env.NODE_ENV !== 'production') {
-    // const fakeDb = new FakeDb();
-    // fakeDb.seedDb();
-//   }
-// });
-
 mongoose.connect(config.DB_URI, { useNewUrlParser: true}).then(() => {
   // if (process.env.NODE_ENV !== 'production') {
     // const fakeDb = new FakeDb();
