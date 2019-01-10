@@ -51,7 +51,7 @@ export function PaymentCard(props) {
             </div>
           }
           <p className="card-text booking-days">{pretifyDate(booking.startAt)} - {pretifyDate(booking.endAt)} | {booking.days} days</p>
-          <p className="card-text booking-price"><span>Price: </span> <span className="booking-price-value">${payment.amount / 100} </span></p>
+          <p className="card-text booking-price"><span>Price: </span> <span className="booking-price-value">${(payment.amount / 100).toFixed(2)} </span></p>
           <p className="card-text payment-status">Status: {payment.status}</p>
            { booking.rental &&
               <Link className="btn btn-rtv mb-4" style={{color: 'white'}} to={`/rentals/${booking.rental._id}`}>Go to Rental</Link>

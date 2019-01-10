@@ -38,7 +38,7 @@ exports.confirmPayment = function(req, res){
       if(foundPayment.status === 'pending' && user.id === foundPayment.toUser.id){
         const booking = foundPayment.booking;
         const charge = await stripe.charges.create({
-            amount: booking.totalPrice,
+            amount: booking.totalPrice * 100,
             currency: 'usd',
             customer: payment.fromStripeCustomerId
         })

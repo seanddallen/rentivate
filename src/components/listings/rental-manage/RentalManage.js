@@ -51,7 +51,7 @@ export class RentalManage extends React.Component {
     const { userRentals, isFetching } = this.state;
 
     return (
-      <section id='userRentals'>
+      <section id='userRentals' style={{marginBottom: '600px'}}>
         <ToastContainer />
         <h1 className='page-title'>My Rentals</h1>
         <div className='row'>
