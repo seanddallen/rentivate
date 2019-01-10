@@ -20,8 +20,8 @@ export function BookingModal(props) {
     </div>
     <ResError errors={errors} />
     <div className='modal-footer'>
-      <button disabled={disabled} onClick={confirmModal} type='button' className='btn btn-bwm'>Confirm</button>
-      <button type='button' onClick={closeModal} className='btn btn-bwm'>Cancel</button>
+      <button disabled={disabled} onClick={confirmModal} type='button' className='btn btn-rtv'>Confirm</button>
+      <button type='button' onClick={closeModal} className='btn btn-rtv'>Cancel</button>
     </div>
   </Modal>
   )

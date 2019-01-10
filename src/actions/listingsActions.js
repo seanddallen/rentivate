@@ -72,9 +72,10 @@ const fetchRentalsFail = (errors) => {
   }
 }
 
-export const fetchRentals = (city) => {
-  // const url = city ? `/api/v1/rentals?city=${city}` : '/api/v1/rentals';
-  const url = city ? `/rentals?city=${city}` : '/rentals';
+export const fetchRentals = (queries) => {
+
+  let url = queries ? `/rentals?${queries}` : '/rentals';
+
   return dispatch => {
     dispatch(fetchRentalsInit());
 

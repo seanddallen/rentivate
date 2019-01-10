@@ -8,17 +8,26 @@ import * as actions from '../../../actions/listingsActions';
 
 class RentalListing extends React.Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.dispatch(actions.fetchRentals());
+    this.category = this.props.match.params.id;
   }
 
   render() {
 
+    // const rentals = this.props.rentals.filter(rental => rental.category == this.props.match.params.id)
+    //
+    // return (
+    //   <section id="rentalListing" style={{marginBottom: '540px'}}>
+    //     <RentalSearchInput />
+    //     <RentalList rentals={rentals} />
+    //   </section>
     const rentals = this.props.rentals.filter(rental => rental.category == this.props.match.params.id)
+    const query = `category=${this.category}`;
 
     return (
-      <section id="rentalListing" style={{marginBottom: '540px'}}>
-        <RentalSearchInput />
+      <section id="rentalListing" style={{marginBottom: '600px'}}>
+        <RentalSearchInput query={query}/>
         <RentalList rentals={rentals} />
       </section>
     )

@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const UserCtrl = require('../controllers/user');
-
 const upload = require('../services/image-upload');
-
 const singleUpload = upload.single('image');
 
 

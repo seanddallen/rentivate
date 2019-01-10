@@ -17,7 +17,7 @@ export class RentalManage extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({isFetching: true});
 
     actions.getUserRentals().then(
@@ -60,7 +60,7 @@ export class RentalManage extends React.Component {
         { !isFetching && userRentals.length === 0 &&
           <div className='alert alert-warning'>
             You dont have any rentals currenty created. Click to add a rental.
-            <Link style={{'marginLeft': '10px'}} className='btn btn-bwm' to='/rentals/new'>Create Rental</Link>
+            <Link style={{'marginLeft': '10px'}} className='btn btn-rtv' to='/rentals/new'>Create Rental</Link>
           </div>
         }
       </section>

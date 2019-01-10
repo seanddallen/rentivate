@@ -34,7 +34,7 @@ class Booking extends React.Component {
   }
 
 
-  componentWillMount() {
+  componentDidMount() {
     this.getBookedOutDates();
   }
 
@@ -132,7 +132,7 @@ class Booking extends React.Component {
         <h3 className='booking-price'>$ {rental.rate} <span className='booking-per-night'>per day</span></h3>
         <hr></hr>
         { !isAuth &&
-          <Link className='btn btn-bwm btn-confirm btn-block' to={{pathname: '/login'}}>
+          <Link className='btn btn-rtv btn-confirm btn-block' to={{pathname: '/login'}}>
             Login to book.
           </Link>
         }
@@ -147,7 +147,7 @@ class Booking extends React.Component {
                 <input ref={this.dateRef} id='dates' type='text' className='form-control'></input>
               </DateRangePicker>
             </div>
-            <button disabled={!startAt || !endAt} onClick={() => this.confirmProposedData()} className='btn btn-bwm btn-confirm btn-block'>Reserve now</button>
+            <button disabled={!startAt || !endAt} onClick={() => this.confirmProposedData()} className='btn btn-rtv btn-confirm btn-block'>Reserve now</button>
           <BookingModal open={this.state.modal.open}
                         closeModal={this.cancelConfirmation}
                         confirmModal={this.reserveRental}

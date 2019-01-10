@@ -68,7 +68,7 @@ class BookingView extends React.Component {
           { !isFetching && bookings.length === 0 &&
             <div className="alert alert-warning">
               You have no bookings created.
-              <Link style={{'marginLeft': '10px'}} className="btn btn-bwm" to="/categories">Available Rental</Link>
+              <Link style={{'marginLeft': '10px'}} className="btn btn-rtv" to="/categories">Available Rental</Link>
             </div>
           }
         </section>

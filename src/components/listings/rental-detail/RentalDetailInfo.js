@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { toUpperCase, rentalType } from '../../../services/helpers';
+import { toUpperCase } from '../../../services/helpers';
 
 export function RentalDetailInfo(props) {
   const rental = props.rental;

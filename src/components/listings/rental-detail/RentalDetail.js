@@ -8,7 +8,7 @@ import * as actions from '../../../actions/listingsActions';
 
 class RentalDetail extends React.Component {
 
-  componentWillMount() {
+  componentDidMount() {
     // Dispatch action
     const rentalId = this.props.match.params.id;
 

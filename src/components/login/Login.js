@@ -24,7 +24,7 @@ class Login extends React.Component {
 
     return (
       <section id="login" style={{marginBottom: '300px'}}>
-        <div className="bwm-form">
+        <div className="rtv-form">
           <div className="row">
             <div className="col-md-5 mt-5">
               <h1>Login</h1>

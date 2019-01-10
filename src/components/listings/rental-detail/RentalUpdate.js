@@ -24,7 +24,7 @@ class RentalUpdate extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     // Dispatch action
     const rentalId = this.props.match.params.id;
     this.props.dispatch(actions.fetchRentalById(rentalId));

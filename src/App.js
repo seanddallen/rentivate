@@ -30,7 +30,7 @@ import 'App.css';
 
 class App extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.checkAuthState();
   }
 

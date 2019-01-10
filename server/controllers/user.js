@@ -40,7 +40,7 @@ exports.register =  function(req, res) {
   }
 
   if (password !== passwordConfirmation) {
-    return res.status(422).send({errors: [{title: 'Invalid passsword.', detail: 'Password is not a same as confirmation.'}]});
+    return res.status(422).send({errors: [{title: 'Invalid passsword.', detail: 'Password is not same as confirmation.'}]});
   }
 
   User.findOne({email}, function(err, existingUser) {

@@ -22,7 +22,7 @@ export function BookingCard(props) {
           <p className="card-text booking-days">{pretifyDate(booking.startAt)} - {pretifyDate(booking.endAt)} | {booking.days} days</p>
           <p className="card-text booking-price"><span>Price: </span> <span className="booking-price-value">${booking.totalPrice}</span></p>
            { booking.rental &&
-              <Link className="btn btn-bwm" to={`/rentals/${booking.rental._id}`}>Go to Rental</Link>
+              <Link className="btn btn-rtv" to={`/rentals/${booking.rental._id}`}>Go to Rental</Link>
            }
         </div>
         <div className="card-footer text-muted">
@@ -54,7 +54,7 @@ export function PaymentCard(props) {
           <p className="card-text booking-price"><span>Price: </span> <span className="booking-price-value">${payment.amount / 100} </span></p>
           <p className="card-text payment-status">Status: {payment.status}</p>
            { booking.rental &&
-              <Link className="btn btn-bwm mb-4" style={{color: 'white'}} to={`/rentals/${booking.rental._id}`}>Go to Rental</Link>
+              <Link className="btn btn-rtv mb-4" style={{color: 'white'}} to={`/rentals/${booking.rental._id}`}>Go to Rental</Link>
            }
         </div>
         <div className="card-footer text-muted">

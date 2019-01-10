@@ -31,7 +31,7 @@ export class Register extends React.Component {
 
     return (
       <section id='register' style={{marginBottom: '300px'}}>
-        <div className='bwm-form'>
+        <div className='rtv-form'>
           <div className='row'>
             <div className='col-md-5 mt-5'>
               <h1>Register</h1>

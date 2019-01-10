@@ -8,7 +8,7 @@ import ReviewCard from './ReviewCard';
 
 class Profile extends React.Component {
 
-  // componentWillMount() {
+  // componentDidMount() {
   //   this.props.dispatch(actions.fetchUserBookings());
   // }
 
@@ -20,7 +20,8 @@ class Profile extends React.Component {
       <div>
         <div className="row-full">
           <div className="outer">
-            <h5 className="text-center" style={{paddingTop: '40px'}}>{this.props.auth.username}</h5>
+            {/* <h5 className="text-center" style={{paddingTop: '40px'}}>{this.props.auth.username}</h5> */}
+            <h5 className="text-center" style={{paddingTop: '40px'}}>Sean Tayler</h5>
             <img className="inner thumbnail" src={require("../../img/sean.jpg")} />
           </div>
         </div>

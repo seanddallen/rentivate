@@ -30,7 +30,7 @@ export class RentalCreate extends React.Component {
 
     return (
       <section id='newRental' style={{marginBottom: '40px'}}>
-        <div className='bwm-form'>
+        <div className='rtv-form'>
           <div className='row'>
             <div className='col-md-3'></div>
             <div className='col-md-6'>

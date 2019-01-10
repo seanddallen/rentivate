@@ -1,6 +1,7 @@
 import React from 'react';
 import { RentalList } from './RentalList';
 import { connect } from 'react-redux';
+import RentalSearchInput from '../RentalSearchInput';
 
 import { toUpperCase } from '../../../services/helpers';
 import * as actions from '../../../actions/listingsActions';
@@ -16,7 +17,7 @@ class RentalSearchListing extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.searchRentalsByCity();
   }
 
@@ -30,10 +31,23 @@ class RentalSearchListing extends React.Component {
   }
 
   searchRentalsByCity() {
+    // const searchedCity = this.props.match.params.city;
+    // this.setState({searchedCity});
+    //
+    // this.props.dispatch(actions.fetchRentals(searchedCity));
     const searchedCity = this.props.match.params.city;
+    const params = new URLSearchParams(this.props.location.search);
+    const category = params.get('category');
+
+    let queries = `city=${searchedCity}`
+
+    if (category) {
+      queries += `&category=${category}`
+    }
+
     this.setState({searchedCity});
 
-    this.props.dispatch(actions.fetchRentals(searchedCity));
+    this.props.dispatch(actions.fetchRentals(queries));
   }
 
   renderTitle() {
@@ -53,9 +67,12 @@ class RentalSearchListing extends React.Component {
   }
 
   render() {
+    const params = new URLSearchParams(this.props.location.search);
+
     return (
       <section id="rentalListing" style={{marginBottom: '540px'}}>
         {this.renderTitle()}
+        <RentalSearchInput query={params}/>
         <RentalList rentals={this.props.rentals.data} />
       </section>
     )

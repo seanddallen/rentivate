@@ -3,7 +3,6 @@ const router = express.Router();
 const Rental = require('../models/listing');
 const User = require('../models/user');
 const { normalizeErrors } = require('../services/mongoose');
-
 const UserCtrl = require('../controllers/user');
 
 router.get('/secret', UserCtrl.authMiddleware, function(req, res) {
@@ -162,7 +161,10 @@ router.post('', UserCtrl.authMiddleware, function(req, res) {
 
 router.get('', function(req, res) {
   const city = req.query.city;
-  const query = city ? {city: city.toLowerCase()} : {};
+  const category = req.query.category;
+
+  // const query = city ? {city: city.toLowerCase()} : {};
+  const query = city && category ? {city: city.toLowerCase(), category: category.toLowerCase()} : {};
 
   Rental.find(query)
       .select('-bookings')

@@ -37,7 +37,7 @@ export class RentalManageModal extends React.Component {
 
     return (
       <React.Fragment>
-        <button type='button' onClick={this.openModal} className='btn btn-bwm'>Bookings</button>
+        <button type='button' onClick={this.openModal} className='btn btn-rtv'>Bookings</button>
         <Modal open={this.state.open} onClose={this.closeModal} little classNames={{ modal: 'rental-booking-modal' }}>
            <h4 className='modal-title title'>Made Bookings</h4>
            <div className='modal-body bookings-inner-container'>
@@ -46,7 +46,7 @@ export class RentalManageModal extends React.Component {
 
           </div>
           <div className='modal-footer'>
-            <button type='button' onClick={this.closeModal} className='btn btn-bwm'>Cancel</button>
+            <button type='button' onClick={this.closeModal} className='btn btn-rtv'>Cancel</button>
           </div>
         </Modal>
       </React.Fragment>

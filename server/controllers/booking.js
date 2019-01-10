@@ -10,10 +10,10 @@ const stripe = require('stripe')(config.STRIPE_SK);
 const customerShare = 0.8;
 
 exports.createBooking = function(req, res) {
-  const { startAt, endAt, totalPrice, guests, days, rental, paymentToken } = req.body;
+  const { startAt, endAt, totalPrice, days, rental, paymentToken } = req.body;
   const user = res.locals.user;
 
-  const booking = new Booking({ startAt, endAt, totalPrice, guests, days});
+  const booking = new Booking({ startAt, endAt, totalPrice, days});
 
   Rental.findById(rental._id)
         .populate('bookings')

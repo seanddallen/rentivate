@@ -50,7 +50,7 @@ function withGeocode(WrappedComponent) {
       }
     }
 
-    componentWillMount() {
+    componentDidMount() {
       this.getGeocodedLocation();
     }
 

@@ -42,7 +42,7 @@ export class RentalManageCard extends React.Component {
         <div className={`card text-center ${deleteClass}`}>
           <div className='card-block'>
             <h4 className='card-title'>{rental.title}</h4>
-            <Link className='btn btn-bwm' to={`/rentals/${rental._id}`}>View Rental</Link>
+            <Link className='btn btn-rtv' to={`/rentals/${rental._id}`}>View Rental</Link>
             { rental.bookings && rental.bookings.length > 0 && modal }
           </div>
           <div className='card-footer text-muted'>
